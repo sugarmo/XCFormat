@@ -1,20 +1,19 @@
 //
-//  ZKRFormatterExtension.m
-//  ZKRFormatter
+//  SugarFormatterExtension.m
+//  SugarFormatter
 //
 //  Created by Steven Mok on 16/10/13.
 //  Copyright © 2016年 ZAKER. All rights reserved.
 //
 
-#import "ZKRFormatterExtension.h"
+#import "SugarFormatterExtension.h"
 
-@implementation ZKRFormatterExtension
+@implementation SugarFormatterExtension
 
 //- (void)extensionDidFinishLaunching
 //{
-//    NSLog(@"ZKRFormatterExtension - extensionDidFinishLaunching");
+//    NSLog(@"SugarFormatterExtension - extensionDidFinishLaunching");
 //}
-
 
 /*
 - (NSArray <NSDictionary <XCSourceEditorCommandDefinitionKey, id> *> *)commandDefinitions

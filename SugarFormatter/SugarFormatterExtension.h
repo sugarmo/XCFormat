@@ -1,6 +1,6 @@
 //
-//  ZKRFormatSourceCommand.h
-//  ZKRFormatter
+//  SugarFormatterExtension.h
+//  SugarFormatter
 //
 //  Created by Steven Mok on 16/10/13.
 //  Copyright © 2016年 ZAKER. All rights reserved.
@@ -8,6 +8,6 @@
 
 #import <XcodeKit/XcodeKit.h>
 
-@interface ZKRFormatSourceCommand : NSObject <XCSourceEditorCommand>
+@interface SugarFormatterExtension : NSObject <XCSourceEditorExtension>
 
 @end

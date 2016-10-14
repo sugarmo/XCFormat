@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>ZKRFormatter</string>
+	<string>SugarFormatter</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -30,23 +30,23 @@
 			<array>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
-					<string>ZKRFormatSourceCommand</string>
+					<string>SugarFormatterCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
-					<string>$(PRODUCT_BUNDLE_IDENTIFIER).ZKRFormatActiveFile</string>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).FormatActiveFile</string>
 					<key>XCSourceEditorCommandName</key>
 					<string>Format Active File</string>
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
-					<string>ZKRFormatSourceCommand</string>
+					<string>SugarFormatterCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
-					<string>$(PRODUCT_BUNDLE_IDENTIFIER).ZKRFormatSelctedLines</string>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).FormatSelctedLines</string>
 					<key>XCSourceEditorCommandName</key>
 					<string>Format Selected Lines</string>
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
-			<string>ZKRFormatterExtension</string>
+			<string>SugarFormatterExtension</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.dt.Xcode.extension.source-editor</string>

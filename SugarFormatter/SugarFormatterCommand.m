@@ -1,18 +1,18 @@
 //
-//  ZKRFormatSourceCommand.m
-//  ZKRFormatter
+//  SugarFormatterCommand.m
+//  SugarFormatter
 //
 //  Created by Steven Mok on 16/10/13.
 //  Copyright © 2016年 ZAKER. All rights reserved.
 //
 
-#import "ZKRFormatSourceCommand.h"
+#import "SugarFormatterCommand.h"
 #import <AppKit/AppKit.h>
 
-#define ZKRFormatActiveFile   @"ZKRFormatActiveFile"
-#define ZKRFormatSelctedLines @"ZKRFormatSelctedLines"
+#define FormatActiveFile   @"FormatActiveFile"
+#define FormatSelctedLines @"FormatSelctedLines"
 
-@implementation ZKRFormatSourceCommand
+@implementation SugarFormatterCommand
 
 - (NSString *)uncrustifyPath
 {
@@ -40,10 +40,9 @@
         return nil;
     }
     NSMutableArray<NSString *> *result = [[NSMutableArray alloc] init];
-    NSRegularExpression *regexp = [[NSRegularExpression alloc] initWithPattern:@".*\n" options:kNilOptions error:NULL];
-    NSArray<NSTextCheckingResult *> *matches = [regexp matchesInString:string options:kNilOptions range:NSMakeRange(0, string.length)];
-    for (NSTextCheckingResult *match in matches) {
-        [result addObject:[string substringWithRange:match.range]];
+    [result setArray:[string componentsSeparatedByString:@"\n"]];
+    if ([[result lastObject] isEqualToString:@""]) {
+        [result removeLastObject];
     }
     return result;
 }
@@ -62,7 +61,7 @@
     }
 
     BOOL isFragmented = NO;
-    if ([invocation.commandIdentifier hasSuffix:ZKRFormatSelctedLines]) {
+    if ([invocation.commandIdentifier hasSuffix:FormatSelctedLines]) {
         isFragmented = YES;
     }
 
@@ -106,29 +105,31 @@
         NSData *outputData = [[outputPipe fileHandleForReading] readDataToEndOfFile];
         if (outputData) {
             NSString *outputString = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
-            NSArray *outputLines = [self convertStringToLines:outputString];
-            if (outputLines) {
-                if (selectedLineRange.location != NSNotFound) {
+            if (selectedLineRange.location != NSNotFound) {
+                NSArray *outputLines = [self convertStringToLines:outputString];
+                if (outputLines) {
                     [invocation.buffer.lines replaceObjectsInRange:selectedLineRange withObjectsFromArray:outputLines];
                 } else {
-                    [invocation.buffer.lines replaceObjectsInRange:NSMakeRange(0, invocation.buffer.lines.count) withObjectsFromArray:outputLines];
+                    error = [NSError errorWithDomain:@"com.sugarmo.SugarBox.SugarFormatter" code:201 userInfo:@{NSLocalizedDescriptionKey : @"Output lines convert failed."}];
                 }
             } else {
-                error = [NSError errorWithDomain:@"cn.zaker.ZKRXcodeHelper.ZKRFormatter" code:201 userInfo:@{NSLocalizedDescriptionKey : @"Output lines convert failed."}];
+                XCSourceTextRange *preSelection = invocation.buffer.selections.firstObject.copy;
+                invocation.buffer.completeBuffer = outputString;
+                [invocation.buffer.selections setArray:@[preSelection]];
             }
         } else {
-            error = [NSError errorWithDomain:@"cn.zaker.ZKRXcodeHelper.ZKRFormatter" code:101 userInfo:@{NSLocalizedDescriptionKey : @"Uncrustify error — output data is empty."}];
+            error = [NSError errorWithDomain:@"com.sugarmo.SugarBox.SugarFormatter" code:101 userInfo:@{NSLocalizedDescriptionKey : @"Uncrustify error — output data is empty."}];
         }
     } else {
         NSData *errorData = [[errorPipe fileHandleForReading] readDataToEndOfFile];
         if (errorData) {
             NSString *errorString = [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding];
             if (errorString) {
-                error = [NSError errorWithDomain:@"cn.zaker.ZKRXcodeHelper.ZKRFormatter" code:202 userInfo:@{NSLocalizedDescriptionKey : errorString}];
+                error = [NSError errorWithDomain:@"com.sugarmo.SugarBox.SugarFormatter" code:202 userInfo:@{NSLocalizedDescriptionKey : errorString}];
             }
         } else {
             NSString *errorString = [NSString stringWithFormat:@"Uncrustify error — exit code %d", status];
-            error = [NSError errorWithDomain:@"cn.zaker.ZKRXcodeHelper.ZKRFormatter" code:102 userInfo:@{NSLocalizedDescriptionKey : errorString}];
+            error = [NSError errorWithDomain:@"com.sugarmo.SugarBox.SugarFormatter" code:102 userInfo:@{NSLocalizedDescriptionKey : errorString}];
         }
     }
 
