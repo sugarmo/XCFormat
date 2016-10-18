@@ -12,11 +12,17 @@
 #define FormatActiveFile   @"FormatActiveFile"
 #define FormatSelctedLines @"FormatSelctedLines"
 
+NSString *const SGMErrorDomain = @"com.sugarmo.SugarBox.SugarFormatter";
+
+enum {
+    SGMFormatterFailureError,
+};
+
 @implementation SugarFormatterCommand
 
 - (NSString *)uncrustifyPath
 {
-      static NSString *uncrustifyPath;
+    static NSString *uncrustifyPath;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         uncrustifyPath = [[NSBundle mainBundle] pathForResource:@"uncrustify" ofType:nil];
@@ -49,7 +55,33 @@
 
 - (void)performCommandWithInvocation:(XCSourceEditorCommandInvocation *)invocation completionHandler:(void (^)(NSError * _Nullable nilOrError))completionHandler
 {
-    NSMutableArray *args = [NSMutableArray array];
+    NSError *error = nil;
+    NSURL *temporaryFolderURL = [[NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES] URLByAppendingPathComponent:[[NSUUID UUID] UUIDString] isDirectory:YES];
+    [[NSFileManager defaultManager] createDirectoryAtPath:temporaryFolderURL.path withIntermediateDirectories:YES attributes:nil error:&error];
+
+    if (error) {
+        NSDictionary *userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Unable to create the temporary folder (`%@`) for Uncrustify. Error: %@.", nil), temporaryFolderURL.path, error.localizedDescription]};
+        error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
+        completionHandler(error);
+        return;
+    }
+
+    [self performCommandWithInvocation:invocation temporaryFolderURL:temporaryFolderURL error:&error];
+
+    // not change the error, because we don't care about the error of removing temp files
+    [[NSFileManager defaultManager] removeItemAtURL:temporaryFolderURL error:NULL];
+
+    completionHandler(error);
+}
+
+
+- (BOOL)performCommandWithInvocation:(XCSourceEditorCommandInvocation *)invocation temporaryFolderURL:(NSURL *)temporaryFolderURL error:(NSError **)outError
+{
+    NSError *error = nil;
+
+    NSMutableArray<NSString *> *args = [NSMutableArray array];
+
+    [args addObject:@"--no-backup"];
 
     NSString *uti = invocation.buffer.contentUTI;
 
@@ -57,7 +89,7 @@
                              || [[NSWorkspace sharedWorkspace] type:uti conformsToType:(NSString *)kUTTypeCHeader]);
 
     if (isObjectiveCFile) {
-        [args addObjectsFromArray:@[@"-l", @"OC", @"-q"]];
+        [args addObjectsFromArray:@[@"-l", @"OC"]];
     }
 
     BOOL isFragmented = NO;
@@ -71,9 +103,10 @@
 
     [args addObjectsFromArray:@[@"-c", [self uncrustifyConfigPath]]];
 
+    NSURL *sourceFileURL = [temporaryFolderURL URLByAppendingPathComponent:@"sourcecode" isDirectory:NO];
+    [args addObject:sourceFileURL.path];
+
     NSPipe *errorPipe = NSPipe.pipe;
-    NSPipe *outputPipe = NSPipe.pipe;
-    NSPipe *inputPie = NSPipe.pipe;
 
     NSRange selectedLineRange = NSMakeRange(NSNotFound, 0);
     if (isFragmented) {
@@ -81,16 +114,29 @@
         selectedLineRange = NSMakeRange(selectedTextRange.start.line, selectedTextRange.end.line - selectedTextRange.start.line + 1);
         NSArray *selectedLines = [invocation.buffer.lines subarrayWithRange:selectedLineRange];
         NSString *selectedString = [selectedLines componentsJoinedByString:@""];
-        [inputPie.fileHandleForWriting writeData:[selectedString dataUsingEncoding:NSUTF8StringEncoding]];
+        [selectedString writeToURL:sourceFileURL atomically:YES encoding:NSUTF8StringEncoding error:&error];
+
+        if (error) {
+            if (outError) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Unable to write the temporary source code for Uncrustify to `%@`. Error: %@.", nil), sourceFileURL.path, error.localizedDescription]};
+                *outError = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
+            }
+            return NO;
+        }
     } else {
-        [inputPie.fileHandleForWriting writeData:[invocation.buffer.completeBuffer dataUsingEncoding:NSUTF8StringEncoding]];
+        [invocation.buffer.completeBuffer writeToURL:sourceFileURL atomically:YES encoding:NSUTF8StringEncoding error:&error];
+
+        if (error) {
+            if (outError) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Unable to write the temporary source code for Uncrustify to `%@`. Error: %@.", nil), sourceFileURL.path, error.localizedDescription]};
+                *outError = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
+            }
+            return NO;
+        }
     }
-    [inputPie.fileHandleForWriting closeFile];
 
     NSTask *task = [[NSTask alloc] init];
     task.standardError = errorPipe;
-    task.standardOutput = outputPipe;
-    task.standardInput = inputPie;
     task.launchPath = [self uncrustifyPath];
     task.arguments = args;
 
@@ -99,41 +145,52 @@
 
     int status = [task terminationStatus];
 
-    NSError *error = nil;
-
     if (status == 0) {
-        NSData *outputData = [[outputPipe fileHandleForReading] readDataToEndOfFile];
-        if (outputData) {
-            NSString *outputString = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
+        NSString *formattedSubstring = [NSString stringWithContentsOfURL:sourceFileURL encoding:NSUTF8StringEncoding error:&error];
+        if (formattedSubstring) {
             if (selectedLineRange.location != NSNotFound) {
-                NSArray *outputLines = [self convertStringToLines:outputString];
+                NSArray *outputLines = [self convertStringToLines:formattedSubstring];
                 if (outputLines) {
                     [invocation.buffer.lines replaceObjectsInRange:selectedLineRange withObjectsFromArray:outputLines];
+                    return YES;
                 } else {
-                    error = [NSError errorWithDomain:@"com.sugarmo.SugarBox.SugarFormatter" code:201 userInfo:@{NSLocalizedDescriptionKey : @"Output lines convert failed."}];
+                    error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:@{NSLocalizedDescriptionKey : @"Output lines convert failed."}];
+                    if (outError) {
+                        *outError = error;
+                    }
                 }
             } else {
                 XCSourceTextRange *preSelection = invocation.buffer.selections.firstObject.copy;
-                invocation.buffer.completeBuffer = outputString;
+                invocation.buffer.completeBuffer = formattedSubstring;
                 [invocation.buffer.selections setArray:@[preSelection]];
+                return YES;
             }
         } else {
-            error = [NSError errorWithDomain:@"com.sugarmo.SugarBox.SugarFormatter" code:101 userInfo:@{NSLocalizedDescriptionKey : @"Uncrustify error — output data is empty."}];
+            error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:@{NSLocalizedDescriptionKey : @"Uncrustify error — output data is empty."}];
+            if (outError) {
+                *outError = error;
+            }
         }
     } else {
         NSData *errorData = [[errorPipe fileHandleForReading] readDataToEndOfFile];
         if (errorData) {
             NSString *errorString = [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding];
             if (errorString) {
-                error = [NSError errorWithDomain:@"com.sugarmo.SugarBox.SugarFormatter" code:202 userInfo:@{NSLocalizedDescriptionKey : errorString}];
+                error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:@{NSLocalizedDescriptionKey : errorString}];
+                if (outError) {
+                    *outError = error;
+                }
             }
         } else {
             NSString *errorString = [NSString stringWithFormat:@"Uncrustify error — exit code %d", status];
-            error = [NSError errorWithDomain:@"com.sugarmo.SugarBox.SugarFormatter" code:102 userInfo:@{NSLocalizedDescriptionKey : errorString}];
+            error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:@{NSLocalizedDescriptionKey : errorString}];
+            if (outError) {
+                *outError = error;
+            }
         }
     }
-
-    completionHandler(error);
+    
+    return NO;
 }
 
 @end
