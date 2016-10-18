@@ -1,26 +1,21 @@
 //
-//  SugarBoxVersionCommand.m
+//  SGBVersionCommand.m
 //  SugarBox
 //
 //  Created by Steven Mok on 16/10/18.
 //  Copyright © 2016年 sugarmo. All rights reserved.
 //
 
-#import "SugarBoxVersionCommand.h"
+#import "SGBVersionCommand.h"
+#import "SGBConstant.h"
 
-NSString *const SGMErrorDomain = @"com.sugarmo.SugarBox";
-
-enum {
-    SGMNotAnError
-};
-
-@implementation SugarBoxVersionCommand
+@implementation SGBVersionCommand
 
 - (void)performCommandWithInvocation:(XCSourceEditorCommandInvocation *)invocation completionHandler:(void (^)(NSError * _Nullable nilOrError))completionHandler
 {
     NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
     NSString *text = [NSString stringWithFormat:@"Version is %@", version];
-    NSError *error = [NSError errorWithDomain:SGMErrorDomain code:SGMNotAnError userInfo:@{NSLocalizedDescriptionKey: text}];
+    NSError *error = [NSError errorWithDomain:SGBErrorDomain code:SGBNotAnError userInfo:@{NSLocalizedDescriptionKey: text}];
     completionHandler(error);
 }
 

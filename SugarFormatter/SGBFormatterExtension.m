@@ -1,18 +1,18 @@
 //
-//  SugarFormatterExtension.m
+//  SGBFormatterExtension.m
 //  SugarFormatter
 //
 //  Created by Steven Mok on 16/10/13.
 //  Copyright © 2016年 ZAKER. All rights reserved.
 //
 
-#import "SugarFormatterExtension.h"
+#import "SGBFormatterExtension.h"
 
-@implementation SugarFormatterExtension
+@implementation SGBFormatterExtension
 
 //- (void)extensionDidFinishLaunching
 //{
-//    NSLog(@"SugarFormatterExtension - extensionDidFinishLaunching");
+//    NSLog(@"SGBFormatterExtension - extensionDidFinishLaunching");
 //}
 
 /*

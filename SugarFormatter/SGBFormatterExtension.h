@@ -1,5 +1,5 @@
 //
-//  SugarFormatterExtension.h
+//  SGBFormatterExtension.h
 //  SugarFormatter
 //
 //  Created by Steven Mok on 16/10/13.
@@ -8,6 +8,6 @@
 
 #import <XcodeKit/XcodeKit.h>
 
-@interface SugarFormatterExtension : NSObject <XCSourceEditorExtension>
+@interface SGBFormatterExtension : NSObject <XCSourceEditorExtension>
 
 @end

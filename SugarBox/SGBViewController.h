@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SGBViewController.h
 //  SugarBox
 //
 //  Created by Steven Mok on 16/10/13.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface SGBViewController : NSViewController
 
 
 @end

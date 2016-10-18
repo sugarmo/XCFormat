@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B05E46DA1DB5F69400558B79 /* SugarBoxVersionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E46D81DB5F67400558B79 /* SugarBoxVersionCommand.m */; };
-		B0A293A51DAF64F700CF98C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A41DAF64F700CF98C4 /* AppDelegate.m */; };
+		B05E46DA1DB5F69400558B79 /* SGBVersionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E46D81DB5F67400558B79 /* SGBVersionCommand.m */; };
+		B0A293A51DAF64F700CF98C4 /* SGBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A41DAF64F700CF98C4 /* SGBAppDelegate.m */; };
 		B0A293A81DAF64F700CF98C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A71DAF64F700CF98C4 /* main.m */; };
-		B0A293AB1DAF64F700CF98C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293AA1DAF64F700CF98C4 /* ViewController.m */; };
+		B0A293AB1DAF64F700CF98C4 /* SGBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293AA1DAF64F700CF98C4 /* SGBViewController.m */; };
 		B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */; };
 		B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AE1DAF64F700CF98C4 /* Main.storyboard */; };
 		B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */; };
-		B0A293C41DAF650C00CF98C4 /* SugarFormatterExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293C31DAF650C00CF98C4 /* SugarFormatterExtension.m */; };
-		B0A293C71DAF650C00CF98C4 /* SugarFormatterCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293C61DAF650C00CF98C4 /* SugarFormatterCommand.m */; };
+		B0A293C41DAF650C00CF98C4 /* SGBFormatterExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293C31DAF650C00CF98C4 /* SGBFormatterExtension.m */; };
+		B0A293C71DAF650C00CF98C4 /* SGBFormatterCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293C61DAF650C00CF98C4 /* SGBFormatterCommand.m */; };
 		B0A293CB1DAF650C00CF98C4 /* SugarFormatter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B0A293BB1DAF650C00CF98C4 /* SugarFormatter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B0A293DE1DAF8FA200CF98C4 /* uncrustify in Resources */ = {isa = PBXBuildFile; fileRef = B0A293D01DAF6A2500CF98C4 /* uncrustify */; };
 		B0A293DF1DAF8FA200CF98C4 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B0A293D21DAF6A3A00CF98C4 /* uncrustify.cfg */; };
+		B0EF069F1DB61E530050607A /* PRCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EF069D1DB61E4E0050607A /* PRCTask.m */; };
+		B0EF06A31DB6204B0050607A /* SGBConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EF06A11DB61ED00050607A /* SGBConstant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,28 +48,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B05E46D71DB5F67400558B79 /* SugarBoxVersionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SugarBoxVersionCommand.h; sourceTree = "<group>"; };
-		B05E46D81DB5F67400558B79 /* SugarBoxVersionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SugarBoxVersionCommand.m; sourceTree = "<group>"; };
+		B05E46D71DB5F67400558B79 /* SGBVersionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBVersionCommand.h; sourceTree = "<group>"; };
+		B05E46D81DB5F67400558B79 /* SGBVersionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBVersionCommand.m; sourceTree = "<group>"; };
 		B0A293A01DAF64F700CF98C4 /* SugarBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SugarBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0A293A31DAF64F700CF98C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B0A293A41DAF64F700CF98C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B0A293A31DAF64F700CF98C4 /* SGBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBAppDelegate.h; sourceTree = "<group>"; };
+		B0A293A41DAF64F700CF98C4 /* SGBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBAppDelegate.m; sourceTree = "<group>"; };
 		B0A293A71DAF64F700CF98C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B0A293A91DAF64F700CF98C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B0A293AA1DAF64F700CF98C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B0A293A91DAF64F700CF98C4 /* SGBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBViewController.h; sourceTree = "<group>"; };
+		B0A293AA1DAF64F700CF98C4 /* SGBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBViewController.m; sourceTree = "<group>"; };
 		B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A293AF1DAF64F700CF98C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0A293B11DAF64F700CF98C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A293BB1DAF650C00CF98C4 /* SugarFormatter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SugarFormatter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B0A293C11DAF650C00CF98C4 /* SugarFormatter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SugarFormatter.entitlements; sourceTree = "<group>"; };
-		B0A293C21DAF650C00CF98C4 /* SugarFormatterExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SugarFormatterExtension.h; sourceTree = "<group>"; };
-		B0A293C31DAF650C00CF98C4 /* SugarFormatterExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SugarFormatterExtension.m; sourceTree = "<group>"; };
-		B0A293C51DAF650C00CF98C4 /* SugarFormatterCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SugarFormatterCommand.h; sourceTree = "<group>"; };
-		B0A293C61DAF650C00CF98C4 /* SugarFormatterCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SugarFormatterCommand.m; sourceTree = "<group>"; };
+		B0A293C21DAF650C00CF98C4 /* SGBFormatterExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBFormatterExtension.h; sourceTree = "<group>"; };
+		B0A293C31DAF650C00CF98C4 /* SGBFormatterExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBFormatterExtension.m; sourceTree = "<group>"; };
+		B0A293C51DAF650C00CF98C4 /* SGBFormatterCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBFormatterCommand.h; sourceTree = "<group>"; };
+		B0A293C61DAF650C00CF98C4 /* SGBFormatterCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBFormatterCommand.m; sourceTree = "<group>"; };
 		B0A293C81DAF650C00CF98C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A293D01DAF6A2500CF98C4 /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
 		B0A293D21DAF6A3A00CF98C4 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
 		B0A293DB1DAF8CA800CF98C4 /* SugarBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SugarBox.entitlements; sourceTree = "<group>"; };
+		B0EF069C1DB61E4E0050607A /* PRCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRCTask.h; sourceTree = "<group>"; };
+		B0EF069D1DB61E4E0050607A /* PRCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRCTask.m; sourceTree = "<group>"; };
+		B0EF06A01DB61ED00050607A /* SGBConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBConstant.h; sourceTree = "<group>"; };
+		B0EF06A11DB61ED00050607A /* SGBConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBConstant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +98,12 @@
 		B07E41271DB08882008104EA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B05E46D71DB5F67400558B79 /* SugarBoxVersionCommand.h */,
-				B05E46D81DB5F67400558B79 /* SugarBoxVersionCommand.m */,
+				B0EF069C1DB61E4E0050607A /* PRCTask.h */,
+				B0EF069D1DB61E4E0050607A /* PRCTask.m */,
+				B0EF06A01DB61ED00050607A /* SGBConstant.h */,
+				B0EF06A11DB61ED00050607A /* SGBConstant.m */,
+				B05E46D71DB5F67400558B79 /* SGBVersionCommand.h */,
+				B05E46D81DB5F67400558B79 /* SGBVersionCommand.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -121,10 +131,10 @@
 		B0A293A21DAF64F700CF98C4 /* SugarBox */ = {
 			isa = PBXGroup;
 			children = (
-				B0A293A31DAF64F700CF98C4 /* AppDelegate.h */,
-				B0A293A41DAF64F700CF98C4 /* AppDelegate.m */,
-				B0A293A91DAF64F700CF98C4 /* ViewController.h */,
-				B0A293AA1DAF64F700CF98C4 /* ViewController.m */,
+				B0A293A31DAF64F700CF98C4 /* SGBAppDelegate.h */,
+				B0A293A41DAF64F700CF98C4 /* SGBAppDelegate.m */,
+				B0A293A91DAF64F700CF98C4 /* SGBViewController.h */,
+				B0A293AA1DAF64F700CF98C4 /* SGBViewController.m */,
 				B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */,
 				B0A293AE1DAF64F700CF98C4 /* Main.storyboard */,
 				B0A293B11DAF64F700CF98C4 /* Info.plist */,
@@ -155,10 +165,10 @@
 		B0A293BF1DAF650C00CF98C4 /* SugarFormatter */ = {
 			isa = PBXGroup;
 			children = (
-				B0A293C21DAF650C00CF98C4 /* SugarFormatterExtension.h */,
-				B0A293C31DAF650C00CF98C4 /* SugarFormatterExtension.m */,
-				B0A293C51DAF650C00CF98C4 /* SugarFormatterCommand.h */,
-				B0A293C61DAF650C00CF98C4 /* SugarFormatterCommand.m */,
+				B0A293C21DAF650C00CF98C4 /* SGBFormatterExtension.h */,
+				B0A293C31DAF650C00CF98C4 /* SGBFormatterExtension.m */,
+				B0A293C51DAF650C00CF98C4 /* SGBFormatterCommand.h */,
+				B0A293C61DAF650C00CF98C4 /* SGBFormatterCommand.m */,
 				B0A293C81DAF650C00CF98C4 /* Info.plist */,
 				B0A293C01DAF650C00CF98C4 /* Supporting Files */,
 			);
@@ -218,7 +228,7 @@
 		B0A293981DAF64F700CF98C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = SGM;
+				CLASSPREFIX = SGB;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = sugarmo;
 				TargetAttributes = {
@@ -289,9 +299,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0A293AB1DAF64F700CF98C4 /* ViewController.m in Sources */,
+				B0A293AB1DAF64F700CF98C4 /* SGBViewController.m in Sources */,
 				B0A293A81DAF64F700CF98C4 /* main.m in Sources */,
-				B0A293A51DAF64F700CF98C4 /* AppDelegate.m in Sources */,
+				B0A293A51DAF64F700CF98C4 /* SGBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,9 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0A293C41DAF650C00CF98C4 /* SugarFormatterExtension.m in Sources */,
-				B05E46DA1DB5F69400558B79 /* SugarBoxVersionCommand.m in Sources */,
-				B0A293C71DAF650C00CF98C4 /* SugarFormatterCommand.m in Sources */,
+				B0EF06A31DB6204B0050607A /* SGBConstant.m in Sources */,
+				B0EF069F1DB61E530050607A /* PRCTask.m in Sources */,
+				B0A293C41DAF650C00CF98C4 /* SGBFormatterExtension.m in Sources */,
+				B05E46DA1DB5F69400558B79 /* SGBVersionCommand.m in Sources */,
+				B0A293C71DAF650C00CF98C4 /* SGBFormatterCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  SGBAppDelegate.h
 //  SugarBox
 //
 //  Created by Steven Mok on 16/10/13.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface SGBAppDelegate : NSObject <NSApplicationDelegate>
 
 
 @end
