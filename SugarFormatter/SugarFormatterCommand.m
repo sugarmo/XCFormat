@@ -74,6 +74,11 @@ enum {
     completionHandler(error);
 }
 
+- (NSError *)errorWithReason:(NSString *)reason
+{
+    NSDictionary *userInfo = @{NSLocalizedDescriptionKey : reason};
+    return [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
+}
 
 - (BOOL)performCommandWithInvocation:(XCSourceEditorCommandInvocation *)invocation temporaryFolderURL:(NSURL *)temporaryFolderURL error:(NSError **)outError
 {
@@ -118,8 +123,7 @@ enum {
 
         if (error) {
             if (outError) {
-                NSDictionary *userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Unable to write the temporary source code for Uncrustify to `%@`. Error: %@.", nil), sourceFileURL.path, error.localizedDescription]};
-                *outError = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
+                *outError = error;
             }
             return NO;
         }
@@ -128,8 +132,7 @@ enum {
 
         if (error) {
             if (outError) {
-                NSDictionary *userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Unable to write the temporary source code for Uncrustify to `%@`. Error: %@.", nil), sourceFileURL.path, error.localizedDescription]};
-                *outError = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
+                *outError = error;
             }
             return NO;
         }
@@ -154,7 +157,7 @@ enum {
                     [invocation.buffer.lines replaceObjectsInRange:selectedLineRange withObjectsFromArray:outputLines];
                     return YES;
                 } else {
-                    error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:@{NSLocalizedDescriptionKey : @"Output lines convert failed."}];
+                    error = [self errorWithReason:@"Output lines convert failed."];
                     if (outError) {
                         *outError = error;
                     }
@@ -166,7 +169,7 @@ enum {
                 return YES;
             }
         } else {
-            error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:@{NSLocalizedDescriptionKey : @"Uncrustify error — output data is empty."}];
+            error = [self errorWithReason:@"Uncrustify error — output data is empty."];
             if (outError) {
                 *outError = error;
             }
@@ -174,16 +177,12 @@ enum {
     } else {
         NSData *errorData = [[errorPipe fileHandleForReading] readDataToEndOfFile];
         if (errorData) {
-            NSString *errorString = [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding];
-            if (errorString) {
-                error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:@{NSLocalizedDescriptionKey : errorString}];
-                if (outError) {
-                    *outError = error;
-                }
+            error = [self errorWithReason:[[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding]];
+            if (outError) {
+                *outError = error;
             }
         } else {
-            NSString *errorString = [NSString stringWithFormat:@"Uncrustify error — exit code %d", status];
-            error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:@{NSLocalizedDescriptionKey : errorString}];
+            error = [self errorWithReason:[NSString stringWithFormat:@"Uncrustify error — exit code %d", status]];
             if (outError) {
                 *outError = error;
             }
