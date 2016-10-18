@@ -12,7 +12,7 @@
 #define FormatActiveFile   @"FormatActiveFile"
 #define FormatSelctedLines @"FormatSelctedLines"
 
-NSString *const SGMErrorDomain = @"com.sugarmo.SugarBox.SugarFormatter";
+NSString *const SGMFormatterErrorDomain = @"com.sugarmo.SugarBox.SugarFormatter";
 
 enum {
     SGMFormatterFailureError,
@@ -61,7 +61,7 @@ enum {
 
     if (error) {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Unable to create the temporary folder (`%@`) for Uncrustify. Error: %@.", nil), temporaryFolderURL.path, error.localizedDescription]};
-        error = [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
+        error = [NSError errorWithDomain:SGMFormatterErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
         completionHandler(error);
         return;
     }
@@ -77,7 +77,7 @@ enum {
 - (NSError *)errorWithReason:(NSString *)reason
 {
     NSDictionary *userInfo = @{NSLocalizedDescriptionKey : reason};
-    return [NSError errorWithDomain:SGMErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
+    return [NSError errorWithDomain:SGMFormatterErrorDomain code:SGMFormatterFailureError userInfo:userInfo];
 }
 
 - (BOOL)performCommandWithInvocation:(XCSourceEditorCommandInvocation *)invocation temporaryFolderURL:(NSURL *)temporaryFolderURL error:(NSError **)outError

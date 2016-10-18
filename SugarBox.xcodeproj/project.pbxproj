@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B05E46DA1DB5F69400558B79 /* SugarBoxVersionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E46D81DB5F67400558B79 /* SugarBoxVersionCommand.m */; };
 		B0A293A51DAF64F700CF98C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A41DAF64F700CF98C4 /* AppDelegate.m */; };
 		B0A293A81DAF64F700CF98C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A71DAF64F700CF98C4 /* main.m */; };
 		B0A293AB1DAF64F700CF98C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293AA1DAF64F700CF98C4 /* ViewController.m */; };
@@ -45,6 +46,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B05E46D71DB5F67400558B79 /* SugarBoxVersionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SugarBoxVersionCommand.h; sourceTree = "<group>"; };
+		B05E46D81DB5F67400558B79 /* SugarBoxVersionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SugarBoxVersionCommand.m; sourceTree = "<group>"; };
 		B0A293A01DAF64F700CF98C4 /* SugarBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SugarBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A293A31DAF64F700CF98C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B0A293A41DAF64F700CF98C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 		B07E41271DB08882008104EA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B05E46D71DB5F67400558B79 /* SugarBoxVersionCommand.h */,
+				B05E46D81DB5F67400558B79 /* SugarBoxVersionCommand.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0A293C41DAF650C00CF98C4 /* SugarFormatterExtension.m in Sources */,
+				B05E46DA1DB5F69400558B79 /* SugarBoxVersionCommand.m in Sources */,
 				B0A293C71DAF650C00CF98C4 /* SugarFormatterCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
