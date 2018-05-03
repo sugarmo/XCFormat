@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -663,11 +664,16 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="XCFormat" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="XCFormat" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="596" y="369" width="480" height="360"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="360"/>
+                        <value key="maxSize" type="size" width="480" height="360"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="xJg-QP-N5q"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -682,39 +688,70 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="SGBViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CZd-8b-Alm">
-                                <rect key="frame" x="51" y="153" width="378" height="24"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please open Xcode to use the extensions." id="miN-N8-Pbi">
-                                    <font key="font" metaFont="system" size="20"/>
-                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                            <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="34Q-ma-IMb">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OeX-Jx-qr4">
+                                        <rect key="frame" x="394" y="13" width="72" height="32"/>
+                                        <buttonCell key="cell" type="push" title="QUIT" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" id="hbr-4m-zcp">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="quit:" target="XfG-lQ-9wD" id="w1b-da-yo5"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-Sh-xIo">
+                                        <rect key="frame" x="14" y="13" width="69" height="32"/>
+                                        <buttonCell key="cell" type="push" title="EDIT" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" id="yGK-3b-zMT">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="editConfig:" target="XfG-lQ-9wD" id="KmW-5I-zAL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pzH-Sh-xIo" secondAttribute="trailing" constant="20" symbolic="YES" id="0ws-g5-Npg"/>
+                                    <constraint firstAttribute="trailing" secondItem="OeX-Jx-qr4" secondAttribute="trailing" constant="20" id="IW9-uz-Aos"/>
+                                    <constraint firstAttribute="bottom" secondItem="OeX-Jx-qr4" secondAttribute="bottom" constant="20" id="Nx2-2a-WrJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="pzH-Sh-xIo" secondAttribute="bottom" constant="20" id="jQT-rd-OFE"/>
+                                    <constraint firstItem="OeX-Jx-qr4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="34Q-ma-IMb" secondAttribute="leading" constant="20" symbolic="YES" id="oBp-Du-ksd"/>
+                                    <constraint firstItem="pzH-Sh-xIo" firstAttribute="leading" secondItem="34Q-ma-IMb" secondAttribute="leading" constant="20" id="tbN-9h-bsl"/>
+                                </constraints>
+                            </visualEffectView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="CZd-8b-Alm">
+                                <rect key="frame" x="18" y="95" width="444" height="171"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="miN-N8-Pbi">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <string key="title">This app includes an Xcode Source Editor Extension. 
+
+To enable it, please go to "System Preferences - Extensions - Xcode Source Editor", then enable "XCFormat".
+
+The extension use "uncrustify" to format your code. If you want to edit the configuration, click "EDIT" to reveal the configuration file in Finder.</string>
+                                    <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XS3-FF-hlX">
-                                <rect key="frame" x="183" y="105" width="115" height="32"/>
-                                <buttonCell key="cell" type="push" title="Open Xcode" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="gFJ-zh-fFl">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="openXcode:" target="XfG-lQ-9wD" id="4yi-LZ-pUT"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="CZd-8b-Alm" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" constant="-30" id="1Ql-Wg-lgK"/>
-                            <constraint firstItem="XS3-FF-hlX" firstAttribute="top" secondItem="CZd-8b-Alm" secondAttribute="bottom" constant="20" id="1WP-nD-IGq"/>
-                            <constraint firstItem="CZd-8b-Alm" firstAttribute="centerX" secondItem="XS3-FF-hlX" secondAttribute="centerX" id="GQE-aZ-rlB"/>
-                            <constraint firstItem="CZd-8b-Alm" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="gL2-Wq-QVH"/>
+                            <constraint firstAttribute="trailing" secondItem="34Q-ma-IMb" secondAttribute="trailing" id="Eli-LY-4jW"/>
+                            <constraint firstItem="CZd-8b-Alm" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="VTh-sl-bn0"/>
+                            <constraint firstItem="CZd-8b-Alm" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="kPZ-RP-gRN"/>
+                            <constraint firstItem="34Q-ma-IMb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="mec-Qk-1aD"/>
+                            <constraint firstItem="34Q-ma-IMb" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="q1W-LI-46M"/>
+                            <constraint firstAttribute="bottom" secondItem="34Q-ma-IMb" secondAttribute="bottom" id="ua5-9m-s73"/>
+                            <constraint firstItem="CZd-8b-Alm" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="zPC-15-ReU"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="752"/>
         </scene>
     </scenes>
 </document>

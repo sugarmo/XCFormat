@@ -10,19 +10,4 @@
 
 @implementation SGBFormatterExtension
 
-- (void)extensionDidFinishLaunching
-{
-     NSArray<NSString *> *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-}
-
-
-//- (NSArray <NSDictionary <XCSourceEditorCommandDefinitionKey, id> *> *)commandDefinitions
-//{
-//    
-//    return @[];
-//}
-
-
-
-
 @end

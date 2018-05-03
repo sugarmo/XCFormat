@@ -24,9 +24,28 @@
     // Update the view, if already loaded.
 }
 
-- (IBAction)openXcode:(id)sender
+- (IBAction)editConfig:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] launchApplication:@"Xcode"];
+    NSString *plugInsPath = [NSBundle mainBundle].builtInPlugInsPath;
+    if (plugInsPath && [[NSFileManager defaultManager] fileExistsAtPath:plugInsPath]) {
+        NSBundle *plugInsBundle = [NSBundle bundleWithPath:plugInsPath];
+        NSString *exPath = [plugInsBundle pathForResource:@"SourceExtension" ofType:@"appex"];
+        if (exPath) {
+            NSBundle *exbundle = [NSBundle bundleWithPath:exPath];
+            NSString *cfgPath = [exbundle pathForResource:@"uncrustify" ofType:@"cfg"];
+            if (cfgPath) {
+                [[NSWorkspace sharedWorkspace] selectFile:cfgPath inFileViewerRootedAtPath:@""];
+            }
+        }
+    }
 }
+
+
+- (IBAction)quit:(id)sender
+{
+    [NSApp terminate:nil];
+}
+
+
 
 @end
