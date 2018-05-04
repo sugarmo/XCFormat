@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B09EB114209B12D300569BC1 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B09EB112209B12D300569BC1 /* uncrustify.cfg */; };
 		B09EB115209B12D300569BC1 /* uncrustify in Resources */ = {isa = PBXBuildFile; fileRef = B09EB113209B12D300569BC1 /* uncrustify */; };
+		B09EB11B209C495300569BC1 /* config-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B09EB11A209C495300569BC1 /* config-doc.txt */; };
 		B0A293A51DAF64F700CF98C4 /* SGBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A41DAF64F700CF98C4 /* SGBAppDelegate.m */; };
 		B0A293A81DAF64F700CF98C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A71DAF64F700CF98C4 /* main.m */; };
 		B0A293AB1DAF64F700CF98C4 /* SGBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293AA1DAF64F700CF98C4 /* SGBViewController.m */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		B09EB112209B12D300569BC1 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
 		B09EB113209B12D300569BC1 /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
+		B09EB11A209C495300569BC1 /* config-doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "config-doc.txt"; sourceTree = "<group>"; };
 		B0A293A01DAF64F700CF98C4 /* XCFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A293A31DAF64F700CF98C4 /* SGBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBAppDelegate.h; sourceTree = "<group>"; };
 		B0A293A41DAF64F700CF98C4 /* SGBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBAppDelegate.m; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				B09EB113209B12D300569BC1 /* uncrustify */,
 				B09EB112209B12D300569BC1 /* uncrustify.cfg */,
+				B09EB11A209C495300569BC1 /* config-doc.txt */,
 				B0A293C11DAF650C00CF98C4 /* SourceExtension.entitlements */,
 			);
 			name = "Supporting Files";
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B09EB115209B12D300569BC1 /* uncrustify in Resources */,
+				B09EB11B209C495300569BC1 /* config-doc.txt in Resources */,
 				B09EB114209B12D300569BC1 /* uncrustify.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,7 +485,6 @@
 				DEVELOPMENT_TEAM = J2XWB65W94;
 				INFOPLIST_FILE = SourceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,7 +501,6 @@
 				DEVELOPMENT_TEAM = J2XWB65W94;
 				INFOPLIST_FILE = SourceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
