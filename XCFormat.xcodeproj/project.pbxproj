@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B09EB114209B12D300569BC1 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B09EB112209B12D300569BC1 /* uncrustify.cfg */; };
+		B09EB115209B12D300569BC1 /* uncrustify in Resources */ = {isa = PBXBuildFile; fileRef = B09EB113209B12D300569BC1 /* uncrustify */; };
 		B0A293A51DAF64F700CF98C4 /* SGBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A41DAF64F700CF98C4 /* SGBAppDelegate.m */; };
 		B0A293A81DAF64F700CF98C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A71DAF64F700CF98C4 /* main.m */; };
 		B0A293AB1DAF64F700CF98C4 /* SGBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293AA1DAF64F700CF98C4 /* SGBViewController.m */; };
@@ -16,8 +18,6 @@
 		B0A293C41DAF650C00CF98C4 /* SGBFormatterExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293C31DAF650C00CF98C4 /* SGBFormatterExtension.m */; };
 		B0A293C71DAF650C00CF98C4 /* SGBFormatterCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293C61DAF650C00CF98C4 /* SGBFormatterCommand.m */; };
 		B0A293CB1DAF650C00CF98C4 /* SourceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B0A293BB1DAF650C00CF98C4 /* SourceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B0A293DE1DAF8FA200CF98C4 /* uncrustify in Resources */ = {isa = PBXBuildFile; fileRef = B0A293D01DAF6A2500CF98C4 /* uncrustify */; };
-		B0A293DF1DAF8FA200CF98C4 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B0A293D21DAF6A3A00CF98C4 /* uncrustify.cfg */; };
 		B0EF069F1DB61E530050607A /* PRCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EF069D1DB61E4E0050607A /* PRCTask.m */; };
 		B0EF06A31DB6204B0050607A /* SGBConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EF06A11DB61ED00050607A /* SGBConstant.m */; };
 /* End PBXBuildFile section */
@@ -47,6 +47,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B09EB112209B12D300569BC1 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
+		B09EB113209B12D300569BC1 /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
 		B0A293A01DAF64F700CF98C4 /* XCFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A293A31DAF64F700CF98C4 /* SGBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBAppDelegate.h; sourceTree = "<group>"; };
 		B0A293A41DAF64F700CF98C4 /* SGBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBAppDelegate.m; sourceTree = "<group>"; };
@@ -64,8 +66,6 @@
 		B0A293C51DAF650C00CF98C4 /* SGBFormatterCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBFormatterCommand.h; sourceTree = "<group>"; };
 		B0A293C61DAF650C00CF98C4 /* SGBFormatterCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBFormatterCommand.m; sourceTree = "<group>"; };
 		B0A293C81DAF650C00CF98C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0A293D01DAF6A2500CF98C4 /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
-		B0A293D21DAF6A3A00CF98C4 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
 		B0A293DB1DAF8CA800CF98C4 /* XCFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XCFormat.entitlements; sourceTree = "<group>"; };
 		B0EF069C1DB61E4E0050607A /* PRCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRCTask.h; sourceTree = "<group>"; };
 		B0EF069D1DB61E4E0050607A /* PRCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRCTask.m; sourceTree = "<group>"; };
@@ -141,8 +141,6 @@
 		B0A293A61DAF64F700CF98C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B0A293D01DAF6A2500CF98C4 /* uncrustify */,
-				B0A293D21DAF6A3A00CF98C4 /* uncrustify.cfg */,
 				B0A293A71DAF64F700CF98C4 /* main.m */,
 				B0A293DB1DAF8CA800CF98C4 /* XCFormat.entitlements */,
 			);
@@ -173,6 +171,8 @@
 		B0A293C01DAF650C00CF98C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B09EB113209B12D300569BC1 /* uncrustify */,
+				B09EB112209B12D300569BC1 /* uncrustify.cfg */,
 				B0A293C11DAF650C00CF98C4 /* SourceExtension.entitlements */,
 			);
 			name = "Supporting Files";
@@ -282,8 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0A293DE1DAF8FA200CF98C4 /* uncrustify in Resources */,
-				B0A293DF1DAF8FA200CF98C4 /* uncrustify.cfg in Resources */,
+				B09EB115209B12D300569BC1 /* uncrustify in Resources */,
+				B09EB114209B12D300569BC1 /* uncrustify.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +482,7 @@
 				INFOPLIST_FILE = SourceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -498,6 +499,7 @@
 				INFOPLIST_FILE = SourceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -187,7 +187,7 @@ enum {
         }
     } else {
         NSData *errorData = [[self.task prc_standardErrorHandle] readDataToEndOfFile];
-        if (errorData) {
+        if (errorData.length > 0) {
             self.lastError = [self errorWithReason:[[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding]];
             [self didFailedPerformCommand];
             return;
