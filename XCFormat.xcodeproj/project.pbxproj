@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B09EB114209B12D300569BC1 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B09EB112209B12D300569BC1 /* uncrustify.cfg */; };
-		B09EB115209B12D300569BC1 /* uncrustify in Resources */ = {isa = PBXBuildFile; fileRef = B09EB113209B12D300569BC1 /* uncrustify */; };
-		B09EB11B209C495300569BC1 /* config-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B09EB11A209C495300569BC1 /* config-doc.txt */; };
+		B028739E209FF2C00093FE26 /* uncrustify in Resources */ = {isa = PBXBuildFile; fileRef = B0287398209FF27C0093FE26 /* uncrustify */; };
+		B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B0287399209FF27C0093FE26 /* uncrustify.cfg */; };
+		B02873A0209FF2C20093FE26 /* config-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0287397209FF27C0093FE26 /* config-doc.txt */; };
 		B0A293A51DAF64F700CF98C4 /* SGBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A41DAF64F700CF98C4 /* SGBAppDelegate.m */; };
 		B0A293A81DAF64F700CF98C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293A71DAF64F700CF98C4 /* main.m */; };
 		B0A293AB1DAF64F700CF98C4 /* SGBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A293AA1DAF64F700CF98C4 /* SGBViewController.m */; };
@@ -48,9 +48,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B09EB112209B12D300569BC1 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
-		B09EB113209B12D300569BC1 /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
-		B09EB11A209C495300569BC1 /* config-doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "config-doc.txt"; sourceTree = "<group>"; };
+		B0287397209FF27C0093FE26 /* config-doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "config-doc.txt"; sourceTree = "<group>"; };
+		B0287398209FF27C0093FE26 /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
+		B0287399209FF27C0093FE26 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
+		B028739A209FF27C0093FE26 /* uncrustify.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = uncrustify.entitlements; sourceTree = "<group>"; };
 		B0A293A01DAF64F700CF98C4 /* XCFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A293A31DAF64F700CF98C4 /* SGBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBAppDelegate.h; sourceTree = "<group>"; };
 		B0A293A41DAF64F700CF98C4 /* SGBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBAppDelegate.m; sourceTree = "<group>"; };
@@ -94,6 +95,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0287396209FF25F0093FE26 /* uncrustify */ = {
+			isa = PBXGroup;
+			children = (
+				B0287397209FF27C0093FE26 /* config-doc.txt */,
+				B0287398209FF27C0093FE26 /* uncrustify */,
+				B0287399209FF27C0093FE26 /* uncrustify.cfg */,
+				B028739A209FF27C0093FE26 /* uncrustify.entitlements */,
+			);
+			path = uncrustify;
+			sourceTree = "<group>";
+		};
 		B07E41271DB08882008104EA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +122,7 @@
 			children = (
 				B07E41271DB08882008104EA /* Utilities */,
 				B0A293A21DAF64F700CF98C4 /* XCFormat */,
+				B0287396209FF25F0093FE26 /* uncrustify */,
 				B0A293BF1DAF650C00CF98C4 /* SourceExtension */,
 				B0A293BC1DAF650C00CF98C4 /* Frameworks */,
 				B0A293A11DAF64F700CF98C4 /* Products */,
@@ -173,9 +186,6 @@
 		B0A293C01DAF650C00CF98C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B09EB113209B12D300569BC1 /* uncrustify */,
-				B09EB112209B12D300569BC1 /* uncrustify.cfg */,
-				B09EB11A209C495300569BC1 /* config-doc.txt */,
 				B0A293C11DAF650C00CF98C4 /* SourceExtension.entitlements */,
 			);
 			name = "Supporting Files";
@@ -285,9 +295,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B09EB115209B12D300569BC1 /* uncrustify in Resources */,
-				B09EB11B209C495300569BC1 /* config-doc.txt in Resources */,
-				B09EB114209B12D300569BC1 /* uncrustify.cfg in Resources */,
+				B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */,
+				B02873A0209FF2C20093FE26 /* config-doc.txt in Resources */,
+				B028739E209FF2C00093FE26 /* uncrustify in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
