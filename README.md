@@ -1,9 +1,3 @@
-XCFormat
-========
+# XCFormat
 
-1. 选择正确的Team
-2. 选择SourceExtension插件作为target
-3. build
-4. 选择Xcode进行调试
-5. 调试成功后重启Xcode
-6. 打开源代码文件，然后点击顶部菜单的Editor-SourceExtension来格式化代码
+<a href="https://geo.itunes.apple.com/us/app/xcformat/id1165321484?mt=12" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/macappstore-lrg.svg) no-repeat;width:165px;height:40px;background-size:contain;"></a>
