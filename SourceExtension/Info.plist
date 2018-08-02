@@ -30,7 +30,7 @@
 			<array>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
-					<string>SGBFormatterCommand</string>
+					<string>$(PRODUCT_MODULE_NAME).FormatterCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).FormatActiveFile</string>
 					<key>XCSourceEditorCommandName</key>
@@ -38,7 +38,7 @@
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
-					<string>SGBFormatterCommand</string>
+					<string>$(PRODUCT_MODULE_NAME).FormatterCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).FormatSelctedLines</string>
 					<key>XCSourceEditorCommandName</key>
@@ -46,7 +46,7 @@
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
-			<string>SGBFormatterExtension</string>
+			<string>$(PRODUCT_MODULE_NAME).FormatterExtension</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.dt.Xcode.extension.source-editor</string>
