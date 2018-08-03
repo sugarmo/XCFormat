@@ -25,12 +25,20 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
         return FormatterError.failure(reason: reason)
     }
 
-    private static let uncrustifyPath: String? = {
+    private let uncrustifyPath: String? = {
         Bundle.main.path(forResource: "uncrustify", ofType: nil)
     }()
 
-    private static let uncrustifyConfigPath: String? = {
+    private let uncrustifyConfigPath: String? = {
         Bundle.main.path(forResource: "uncrustify", ofType: "cfg")
+    }()
+
+    private let swiftFormatPath: String? = {
+        Bundle.main.path(forResource: "swiftformat", ofType: nil)
+    }()
+
+    private let swiftFormatConfigPath: String? = {
+        Bundle.main.path(forResource: "swiftformat", ofType: "json")
     }()
 
     private func convertStringToLines(_ string: String) -> [String] {
@@ -84,7 +92,15 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
             }
             completion = completionHandler
 
-            task = try makeTask(with: invocation)
+            let uti = invocation.buffer.contentUTI
+
+            let isSwiftFile = NSWorkspace.shared.type(uti, conformsToType: kUTTypeSwiftSource as String)
+            if isSwiftFile {
+                task = try makeSwiftFormatTask(with: invocation)
+            } else {
+                task = try makeUncrustifyTask(with: invocation)
+            }
+
             task?.launch(with: .none)
 
             while task != nil {
@@ -134,7 +150,67 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
         }
     }
 
-    private func makeTask(with invocation: XCSourceEditorCommandInvocation) throws -> Process {
+    private func swiftFormatRules() -> String {
+        do {
+            if let path = swiftFormatConfigPath {
+                var rules = [String]()
+                let data = try Data(contentsOf: URL(fileURLWithPath: path))
+                if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Bool] {
+                    for (name, value) in dictionary {
+                        if value {
+                            rules.append(name)
+                        }
+                    }
+                }
+                return rules.joined(separator: ",")
+            }
+        } catch {
+            return ""
+        }
+        return ""
+    }
+
+    private func makeSwiftFormatTask(with invocation: XCSourceEditorCommandInvocation) throws -> Process {
+        var args = [String]()
+
+        var isFragmented = false
+        if invocation.commandIdentifier.hasSuffix(formatSelctedLines) {
+            isFragmented = true
+        }
+
+        if isFragmented {
+            args.append(contentsOf: ["--fragment", "true"])
+        }
+
+        args.append(contentsOf: ["--rules", swiftFormatRules()])
+
+        let sourceFileURL = temporaryFolderURL!.appendingPathComponent("sourcecode.swift", isDirectory: false)
+        args.append(sourceFileURL.path)
+
+        var selectedLineRange = NSMakeRange(NSNotFound, 0)
+        if isFragmented {
+            let selectedTextRange = invocation.buffer.selections.firstObject as! XCSourceTextRange
+            selectedLineRange = NSMakeRange(selectedTextRange.start.line, selectedTextRange.end.line - selectedTextRange.start.line + 1)
+            let selectedLines = invocation.buffer.lines.subarray(with: selectedLineRange) as NSArray
+            let selectedString = selectedLines.componentsJoined(by: "")
+            try selectedString.write(to: sourceFileURL, atomically: true, encoding: .utf8)
+        } else {
+            try invocation.buffer.completeBuffer.write(to: sourceFileURL, atomically: true, encoding: .utf8)
+        }
+
+        let task = Process()
+        task.standardError = Pipe()
+        task.launchPath = swiftFormatPath
+        task.arguments = args
+
+        task.addTerminateBlock { (terminationStatus: Int32) in
+            self.taskDidTerminated(terminationStatus, invocation: invocation, selectedLineRange: selectedLineRange, sourceFileURL: sourceFileURL)
+        }
+
+        return task
+    }
+
+    private func makeUncrustifyTask(with invocation: XCSourceEditorCommandInvocation) throws -> Process {
         var args = [String]()
 
         args.append("--no-backup")
@@ -155,12 +231,10 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
             args.append("--frag")
         }
 
-        args.append(contentsOf: ["-c", type(of: self).uncrustifyConfigPath] as! [String])
+        args.append(contentsOf: ["-c", uncrustifyConfigPath!])
 
         let sourceFileURL = temporaryFolderURL!.appendingPathComponent("sourcecode", isDirectory: false)
         args.append(sourceFileURL.path)
-
-        let errorPipe = Pipe()
 
         var selectedLineRange = NSMakeRange(NSNotFound, 0)
         if isFragmented {
@@ -174,8 +248,8 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
         }
 
         let task = Process()
-        task.standardError = errorPipe
-        task.launchPath = type(of: self).uncrustifyPath
+        task.standardError = Pipe()
+        task.launchPath = uncrustifyPath
         task.arguments = args
 
         task.addTerminateBlock { (terminationStatus: Int32) in
