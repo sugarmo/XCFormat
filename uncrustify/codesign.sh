@@ -1,3 +1,3 @@
 #!/bin/bash
 
-codesign --force --sign 8BE25F6EC2D45CC606A1F2D15A4CEC45C5521EAF --entitlements uncrustify.entitlements uncrustify
+codesign --force --sign D42D5A68C17AA2028A9D07789DE5FCC35583094A --entitlements ../SourceExtension/Binary.entitlements uncrustify

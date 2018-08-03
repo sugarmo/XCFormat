@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B028739E209FF2C00093FE26 /* uncrustify in Resources */ = {isa = PBXBuildFile; fileRef = B0287398209FF27C0093FE26 /* uncrustify */; };
 		B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B0287399209FF27C0093FE26 /* uncrustify.cfg */; };
-		B02873A0209FF2C20093FE26 /* config-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0287397209FF27C0093FE26 /* config-doc.txt */; };
+		B02873A0209FF2C20093FE26 /* uncrustify-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0287397209FF27C0093FE26 /* uncrustify-doc.txt */; };
 		B02E4FF92112D8FF004F0EA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E4FF82112D8FF004F0EA5 /* AppDelegate.swift */; };
 		B02E50192112DA7A004F0EA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E50182112DA7A004F0EA5 /* MainViewController.swift */; };
 		B02E501A2112DC84004F0EA5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01536FA2111C7F100F89B9A /* Task.swift */; };
@@ -18,6 +18,7 @@
 		B02E501F2112DCD3004F0EA5 /* FormatterCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */; };
 		B0395D0921141A8800427DBB /* swiftformat.json in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0721141A8800427DBB /* swiftformat.json */; };
 		B0395D0A21141A8800427DBB /* swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0821141A8800427DBB /* swiftformat */; };
+		B0395D0D211423B400427DBB /* swiftformat-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0C211423B400427DBB /* swiftformat-doc.txt */; };
 		B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */; };
 		B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AE1DAF64F700CF98C4 /* Main.storyboard */; };
 		B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */; };
@@ -51,7 +52,7 @@
 /* Begin PBXFileReference section */
 		B01536F92111C7F100F89B9A /* XCFormat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCFormat-Bridging-Header.h"; sourceTree = "<group>"; };
 		B01536FA2111C7F100F89B9A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		B0287397209FF27C0093FE26 /* config-doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "config-doc.txt"; sourceTree = "<group>"; };
+		B0287397209FF27C0093FE26 /* uncrustify-doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "uncrustify-doc.txt"; sourceTree = "<group>"; };
 		B0287398209FF27C0093FE26 /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
 		B0287399209FF27C0093FE26 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
 		B02E4FF62112B063004F0EA5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		B0395D0721141A8800427DBB /* swiftformat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swiftformat.json; sourceTree = "<group>"; };
 		B0395D0821141A8800427DBB /* swiftformat */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = swiftformat; sourceTree = "<group>"; };
 		B0395D0B21141AD900427DBB /* Binary.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Binary.entitlements; sourceTree = "<group>"; };
+		B0395D0C211423B400427DBB /* swiftformat-doc.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "swiftformat-doc.txt"; sourceTree = "<group>"; };
 		B0A293A01DAF64F700CF98C4 /* XCFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A293AF1DAF64F700CF98C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,8 +97,8 @@
 		B0287396209FF25F0093FE26 /* uncrustify */ = {
 			isa = PBXGroup;
 			children = (
-				B0287397209FF27C0093FE26 /* config-doc.txt */,
 				B0287398209FF27C0093FE26 /* uncrustify */,
+				B0287397209FF27C0093FE26 /* uncrustify-doc.txt */,
 				B0287399209FF27C0093FE26 /* uncrustify.cfg */,
 			);
 			path = uncrustify;
@@ -105,8 +107,9 @@
 		B0395D0621141A8800427DBB /* SwiftFormat */ = {
 			isa = PBXGroup;
 			children = (
-				B0395D0721141A8800427DBB /* swiftformat.json */,
 				B0395D0821141A8800427DBB /* swiftformat */,
+				B0395D0C211423B400427DBB /* swiftformat-doc.txt */,
+				B0395D0721141A8800427DBB /* swiftformat.json */,
 			);
 			path = SwiftFormat;
 			sourceTree = "<group>";
@@ -298,7 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */,
-				B02873A0209FF2C20093FE26 /* config-doc.txt in Resources */,
+				B02873A0209FF2C20093FE26 /* uncrustify-doc.txt in Resources */,
+				B0395D0D211423B400427DBB /* swiftformat-doc.txt in Resources */,
 				B0395D0921141A8800427DBB /* swiftformat.json in Resources */,
 				B0395D0A21141A8800427DBB /* swiftformat in Resources */,
 				B028739E209FF2C00093FE26 /* uncrustify in Resources */,

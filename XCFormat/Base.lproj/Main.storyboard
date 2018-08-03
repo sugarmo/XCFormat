@@ -688,15 +688,15 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="XCFormat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="382"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="34Q-ma-IMb">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="382"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OeX-Jx-qr4">
-                                        <rect key="frame" x="394" y="13" width="72" height="32"/>
-                                        <buttonCell key="cell" type="push" title="QUIT" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" id="hbr-4m-zcp">
+                                        <rect key="frame" x="207" y="7" width="66" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" id="hbr-4m-zcp">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -704,54 +704,148 @@
                                             <action selector="quit:" target="XfG-lQ-9wD" id="w1b-da-yo5"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-Sh-xIo">
-                                        <rect key="frame" x="14" y="13" width="69" height="32"/>
-                                        <buttonCell key="cell" type="push" title="EDIT" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" id="yGK-3b-zMT">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="editConfig:" target="XfG-lQ-9wD" id="CzD-cl-aC0"/>
-                                        </connections>
-                                    </button>
+                                    <tabView translatesAutoresizingMaskIntoConstraints="NO" id="QIj-z9-G8f">
+                                        <rect key="frame" x="13" y="39" width="454" height="309"/>
+                                        <font key="font" metaFont="system"/>
+                                        <tabViewItems>
+                                            <tabViewItem label="Usage" identifier="" id="xTn-Bv-MVT">
+                                                <view key="view" id="ZMt-Bm-Svg">
+                                                    <rect key="frame" x="10" y="33" width="434" height="263"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-ZO-8hI">
+                                                            <rect key="frame" x="18" y="34" width="398" height="209"/>
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="YWM-yf-APr">
+                                                                <font key="font" metaFont="system" size="15"/>
+                                                                <string key="title">XCFormat includes an Xcode Source Editor Extension. To enable it, please perform the following steps:
+
+1. Open "XCFormat" once.
+2. Open "System Preferences"
+3. Click "Extensions"
+4. Click "Xcode Source Editor"
+5. Enable "XCFormat"
+
+Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
+                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <string key="userLabel">This app includes an Xcode Source Editor Extension.   To enable it, please go to "System Preferences - Extensions - Xcode Source Editor", then enable "XCFormat".  The extension use "uncrustify" to format your code. If you want to edit the configuration, click "EDIT" to reveal the configuration file in Finder.</string>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="a1g-ZO-8hI" firstAttribute="centerX" secondItem="ZMt-Bm-Svg" secondAttribute="centerX" id="75v-qj-a9f"/>
+                                                        <constraint firstItem="a1g-ZO-8hI" firstAttribute="top" secondItem="ZMt-Bm-Svg" secondAttribute="top" constant="20" id="8mp-Sy-Nf1"/>
+                                                    </constraints>
+                                                </view>
+                                            </tabViewItem>
+                                            <tabViewItem label="Uncrustify" identifier="" id="Vvn-rV-1d9">
+                                                <view key="view" id="kgV-gq-mj3">
+                                                    <rect key="frame" x="10" y="33" width="434" height="263"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-Sh-xIo">
+                                                            <rect key="frame" x="177" y="7" width="80" height="32"/>
+                                                            <buttonCell key="cell" type="push" title="Config" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" id="yGK-3b-zMT">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="editUncrustifyConfig:" target="XfG-lQ-9wD" id="yQx-zU-B1y"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="CZd-8b-Alm">
+                                                            <rect key="frame" x="25" y="53" width="385" height="190"/>
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="miN-N8-Pbi">
+                                                                <font key="font" metaFont="system" size="15"/>
+                                                                <string key="title">The extension use uncrustify to format your Non-Swift code. 
+
+File Explaination:
+
+1. uncrustify -- The binary to execute formatting.
+2. uncrustify.cfg -- The config file of uncrustify.
+3. uncrustify-doc.txt -- The documentation of the rules.
+
+Click "Config" to reveal the config file in Finder.</string>
+                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <string key="userLabel">This app includes an Xcode Source Editor Extension.   To enable it, please go to "System Preferences - Extensions - Xcode Source Editor", then enable "XCFormat".  The extension use "uncrustify" to format your code. If you want to edit the configuration, click "EDIT" to reveal the configuration file in Finder.</string>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="pzH-Sh-xIo" firstAttribute="centerX" secondItem="kgV-gq-mj3" secondAttribute="centerX" id="NNa-91-rkJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pzH-Sh-xIo" secondAttribute="bottom" constant="14" id="W0a-he-wLj"/>
+                                                        <constraint firstItem="CZd-8b-Alm" firstAttribute="top" secondItem="kgV-gq-mj3" secondAttribute="top" constant="20" id="YFT-PM-XEl"/>
+                                                        <constraint firstItem="CZd-8b-Alm" firstAttribute="centerX" secondItem="kgV-gq-mj3" secondAttribute="centerX" id="ZBp-ut-tHr"/>
+                                                    </constraints>
+                                                </view>
+                                            </tabViewItem>
+                                            <tabViewItem label="SwiftFormat" identifier="" id="lb4-KJ-SBW">
+                                                <view key="view" id="NAK-TN-1Ms">
+                                                    <rect key="frame" x="10" y="33" width="434" height="263"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g6A-1I-cas">
+                                                            <rect key="frame" x="177" y="7" width="80" height="32"/>
+                                                            <buttonCell key="cell" type="push" title="Config" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" id="Ts1-dj-VH2">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="editSwiftFormatConfig:" target="XfG-lQ-9wD" id="sbk-ix-N3q"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="JbA-iX-eA9">
+                                                            <rect key="frame" x="16" y="72" width="402" height="171"/>
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="22X-D3-sqI">
+                                                                <font key="font" metaFont="system" size="15"/>
+                                                                <string key="title">The extension use SwiftFormat to format your Swift code. 
+
+File Explaination:
+
+1. swiftformat -- The binary to execute formatting.
+2. swiftformat.json -- The config file of uncrustify.
+3. swiftformat-doc.txt -- The documentation of the rules.
+
+Click "Config" to reveal the config file in Finder.</string>
+                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <string key="userLabel">This app includes an Xcode Source Editor Extension.   To enable it, please go to "System Preferences - Extensions - Xcode Source Editor", then enable "XCFormat".  The extension use "uncrustify" to format your code. If you want to edit the configuration, click "EDIT" to reveal the configuration file in Finder.</string>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="g6A-1I-cas" firstAttribute="centerX" secondItem="NAK-TN-1Ms" secondAttribute="centerX" id="83K-HP-SmD"/>
+                                                        <constraint firstItem="JbA-iX-eA9" firstAttribute="top" secondItem="NAK-TN-1Ms" secondAttribute="top" constant="20" id="TLr-sc-CYK"/>
+                                                        <constraint firstItem="JbA-iX-eA9" firstAttribute="centerX" secondItem="NAK-TN-1Ms" secondAttribute="centerX" id="ZcF-Ae-7ai"/>
+                                                        <constraint firstAttribute="bottom" secondItem="g6A-1I-cas" secondAttribute="bottom" constant="14" id="uMW-eT-HDo"/>
+                                                    </constraints>
+                                                </view>
+                                            </tabViewItem>
+                                        </tabViewItems>
+                                    </tabView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pzH-Sh-xIo" secondAttribute="trailing" constant="20" symbolic="YES" id="0ws-g5-Npg"/>
-                                    <constraint firstAttribute="trailing" secondItem="OeX-Jx-qr4" secondAttribute="trailing" constant="20" id="IW9-uz-Aos"/>
-                                    <constraint firstAttribute="bottom" secondItem="OeX-Jx-qr4" secondAttribute="bottom" constant="20" id="Nx2-2a-WrJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="pzH-Sh-xIo" secondAttribute="bottom" constant="20" id="jQT-rd-OFE"/>
-                                    <constraint firstItem="OeX-Jx-qr4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="34Q-ma-IMb" secondAttribute="leading" constant="20" symbolic="YES" id="oBp-Du-ksd"/>
-                                    <constraint firstItem="pzH-Sh-xIo" firstAttribute="leading" secondItem="34Q-ma-IMb" secondAttribute="leading" constant="20" id="tbN-9h-bsl"/>
+                                    <constraint firstAttribute="bottom" secondItem="OeX-Jx-qr4" secondAttribute="bottom" constant="14" id="Nx2-2a-WrJ"/>
+                                    <constraint firstItem="QIj-z9-G8f" firstAttribute="top" secondItem="34Q-ma-IMb" secondAttribute="top" constant="40" id="XWp-EL-06h"/>
+                                    <constraint firstItem="OeX-Jx-qr4" firstAttribute="centerX" secondItem="34Q-ma-IMb" secondAttribute="centerX" id="dyu-gP-nCf"/>
+                                    <constraint firstItem="OeX-Jx-qr4" firstAttribute="top" secondItem="QIj-z9-G8f" secondAttribute="bottom" constant="14" id="oxP-Dm-Hn2"/>
+                                    <constraint firstItem="QIj-z9-G8f" firstAttribute="leading" secondItem="34Q-ma-IMb" secondAttribute="leading" constant="20" id="yKE-IW-ySm"/>
+                                    <constraint firstAttribute="trailing" secondItem="QIj-z9-G8f" secondAttribute="trailing" constant="20" id="yh5-R9-JRh"/>
                                 </constraints>
                             </visualEffectView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="CZd-8b-Alm">
-                                <rect key="frame" x="18" y="95" width="444" height="171"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="miN-N8-Pbi">
-                                    <font key="font" metaFont="system" size="15"/>
-                                    <string key="title">This app includes an Xcode Source Editor Extension. 
-
-To enable it, please go to "System Preferences - Extensions - Xcode Source Editor", then enable "XCFormat".
-
-The extension use "uncrustify" to format your code. If you want to edit the configuration, click "EDIT" to reveal the configuration file in Finder.</string>
-                                    <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="34Q-ma-IMb" secondAttribute="trailing" id="Eli-LY-4jW"/>
-                            <constraint firstItem="CZd-8b-Alm" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="VTh-sl-bn0"/>
-                            <constraint firstItem="CZd-8b-Alm" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="kPZ-RP-gRN"/>
                             <constraint firstItem="34Q-ma-IMb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="mec-Qk-1aD"/>
                             <constraint firstItem="34Q-ma-IMb" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="q1W-LI-46M"/>
                             <constraint firstAttribute="bottom" secondItem="34Q-ma-IMb" secondAttribute="bottom" id="ua5-9m-s73"/>
-                            <constraint firstItem="CZd-8b-Alm" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="zPC-15-ReU"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="752"/>
+            <point key="canvasLocation" x="75" y="763"/>
         </scene>
     </scenes>
 </document>
