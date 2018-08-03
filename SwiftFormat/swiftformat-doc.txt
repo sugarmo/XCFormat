@@ -1,1 +1,31 @@
-Please visit https://github.com/nicklockwood/SwiftFormat
+swiftformat's rules can be configured using options. a given option may affect
+multiple rules. options have no affect if the related rules have been disabled:
+
+--allman           use allman indentation style. "true" or "false" (default)
+--binarygrouping   binary grouping,threshold or "none", "ignore". default: 4,8
+--commas           commas in collection literals. "always" (default) or "inline"
+--comments         indenting of comment bodies. "indent" (default) or "ignore"
+--decimalgrouping  decimal grouping,threshold or "none", "ignore". default: 3,6
+--elseposition     placement of else/catch. "same-line" (default) or "next-line"
+--empty            how empty values are represented. "void" (default) or "tuple"
+--experimental     experimental rules. "enabled" or "disabled" (default)
+--exponentcase     case of 'e' in numbers. "lowercase" or "uppercase" (default)
+--header           header comments. "strip", "ignore", or the text you wish use
+--hexgrouping      hex grouping,threshold or "none", "ignore". default: 4,8
+--hexliteralcase   casing for hex literals. "uppercase" (default) or "lowercase"
+--ifdef            #if indenting. "indent" (default), "noindent" or "outdent"
+--indent           number of spaces to indent, or "tab" to use tabs
+--indentcase       indent cases inside a switch. "true" or "false" (default)
+--linebreaks       linebreak character to use. "cr", "crlf" or "lf" (default)
+--octalgrouping    octal grouping,threshold or "none", "ignore". default: 4,8
+--operatorfunc     spacing for operator funcs. "spaced" (default) or "nospace"
+--patternlet       let/var placement in patterns. "hoist" (default) or "inline"
+--ranges           spacing for ranges. "spaced" (default) or "nospace"
+--semicolons       allow semicolons. "never" or "inline" (default)
+--self             use self for member variables. "remove" (default) or "insert"
+--stripunusedargs  "closure-only", "unnamed-only" or "always" (default)
+--trimwhitespace   trim trailing space. "always" (default) or "nonblank-lines"
+--wraparguments    wrap function args. "beforefirst", "afterfirst", "disabled"
+--wrapelements     wrap array/dict. "beforefirst", "afterfirst", "disabled"
+
+For more details, please check https://github.com/nicklockwood/SwiftFormat

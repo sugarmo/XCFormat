@@ -153,21 +153,48 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
     private func swiftFormatRules() -> String {
         do {
             if let path = swiftFormatConfigPath {
-                var rules = [String]()
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
-                if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Bool] {
-                    for (name, value) in dictionary {
-                        if value {
-                            rules.append(name)
+                if let root = try JSONSerialization.jsonObject(with: data, options: []) as? [String: [String: Any]] {
+                    for (sectionName, sectionDict) in root {
+                        if sectionName == "rules", let dict = sectionDict as? [String: Bool] {
+                            var rules = [String]()
+                            for (ruleName, ruleEnabled) in dict {
+                                if ruleEnabled {
+                                    rules.append(ruleName)
+                                }
+                            }
+                            return rules.joined(separator: ",")
                         }
                     }
                 }
-                return rules.joined(separator: ",")
             }
         } catch {
             return ""
         }
         return ""
+    }
+
+    private func swiftFormatOptions() -> [String] {
+        do {
+            if let path = swiftFormatConfigPath {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path))
+                if let root = try JSONSerialization.jsonObject(with: data, options: []) as? [String: [String: Any]] {
+                    for (sectionName, sectionDict) in root {
+                        if sectionName == "options", let dict = sectionDict as? [String: String] {
+                            var options = [String]()
+                            for (optionName, optionValue) in dict {
+                                options.append(optionName)
+                                options.append(optionValue)
+                            }
+                            return options
+                        }
+                    }
+                }
+            }
+        } catch {
+            return []
+        }
+        return []
     }
 
     private func makeSwiftFormatTask(with invocation: XCSourceEditorCommandInvocation) throws -> Process {
@@ -181,6 +208,8 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
         if isFragmented {
             args.append(contentsOf: ["--fragment", "true"])
         }
+
+        args.append(contentsOf: swiftFormatOptions())
 
         args.append(contentsOf: ["--rules", swiftFormatRules()])
 
