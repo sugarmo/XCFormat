@@ -246,7 +246,8 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
 
         let uti = invocation.buffer.contentUTI
 
-        let isObjectiveCFile = NSWorkspace.shared.type(uti, conformsToType: kUTTypeObjectiveCSource as String)
+        let isObjectiveCFile = NSWorkspace.shared.type(uti, conformsToType: kUTTypeObjectiveCSource as String) ||
+                NSWorkspace.shared.type(uti, conformsToType: kUTTypeCHeader as String)
         if isObjectiveCFile {
             args.append(contentsOf: ["-l", "OC"])
         }
