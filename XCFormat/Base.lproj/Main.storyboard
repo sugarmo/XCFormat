@@ -200,7 +200,7 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
 File Explaination:
 
 1. uncrustify -- The binary to execute formatting.
-2. uncrustify.cfg -- The config file of uncrustify.
+2. uncrustify.cfg -- The config file for uncrustify.
 3. uncrustify-doc.txt -- The documentation of the rules.
 
 Click "Config" to reveal the config file in Finder.</string>
@@ -242,7 +242,7 @@ Click "Config" to reveal the config file in Finder.</string>
 File Explaination:
 
 1. swiftformat -- The binary to execute formatting.
-2. swiftformat.json -- The config file of uncrustify.
+2. swiftformat.json -- The config file for SwiftFormat.
 3. swiftformat-doc.txt -- The documentation of the rules.
 
 Click "Config" to reveal the config file in Finder.</string>
