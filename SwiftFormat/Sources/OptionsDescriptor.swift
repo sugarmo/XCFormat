@@ -128,7 +128,7 @@ extension FormatOptions {
              displayName: String,
              help: String,
              keyPath: WritableKeyPath<FormatOptions, String>,
-             options: DictionaryLiteral<String, String>) {
+             options: KeyValuePairs<String, String>) {
             let map: [String: String] = Dictionary(options.map { ($0, $1) }, uniquingKeysWith: { $1 })
             let keys = Array(map.keys)
             self.init(argumentName: argumentName,

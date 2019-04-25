@@ -346,7 +346,7 @@ public func offsetForToken(at index: Int, in tokens: [Token]) -> (line: Int, col
 
 /// Process parsing errors
 public func parsingError(for tokens: [Token], options: FormatOptions) -> FormatError? {
-    if let index = tokens.index(where: {
+    if let index = tokens.firstIndex(where: {
         guard options.fragment || !$0.isError else { return true }
         guard !options.ignoreConflictMarkers, case let .operator(string, _) = $0 else { return false }
         return string.hasPrefix("<<<<<") || string.hasPrefix("=====") || string.hasPrefix(">>>>>")

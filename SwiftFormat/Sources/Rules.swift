@@ -2695,7 +2695,7 @@ public struct _FormatRules {
         func removeUsed<T>(from argNames: inout [String], with associatedData: inout [T], in range: CountableRange<Int>) {
             for i in range {
                 let token = formatter.tokens[i]
-                if case .identifier = token, let index = argNames.index(of: token.unescaped()),
+                if case .identifier = token, let index = argNames.firstIndex(of: token.unescaped()),
                     formatter.last(.nonSpaceOrCommentOrLinebreak, before: i)?.isOperator(".") == false,
                     formatter.next(.nonSpaceOrCommentOrLinebreak, after: i) != .delimiter(":") ||
                     formatter.currentScope(at: i) == .startOfScope("[") {
