@@ -17,7 +17,6 @@
 		B02E501D2112DCBF004F0EA5 /* FormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E501C2112DCBF004F0EA5 /* FormatterExtension.swift */; };
 		B02E501F2112DCD3004F0EA5 /* FormatterCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */; };
 		B0395D0921141A8800427DBB /* swiftformat.json in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0721141A8800427DBB /* swiftformat.json */; };
-		B0395D0A21141A8800427DBB /* swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0821141A8800427DBB /* swiftformat */; };
 		B0395D0D211423B400427DBB /* swiftformat-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0C211423B400427DBB /* swiftformat-doc.txt */; };
 		B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */; };
 		B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AE1DAF64F700CF98C4 /* Main.storyboard */; };
@@ -61,7 +60,6 @@
 		B02E501C2112DCBF004F0EA5 /* FormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterExtension.swift; sourceTree = "<group>"; };
 		B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterCommand.swift; sourceTree = "<group>"; };
 		B0395D0721141A8800427DBB /* swiftformat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swiftformat.json; sourceTree = "<group>"; };
-		B0395D0821141A8800427DBB /* swiftformat */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = swiftformat; sourceTree = "<group>"; };
 		B0395D0B21141AD900427DBB /* Binary.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Binary.entitlements; sourceTree = "<group>"; };
 		B0395D0C211423B400427DBB /* swiftformat-doc.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "swiftformat-doc.txt"; sourceTree = "<group>"; };
 		B0A293A01DAF64F700CF98C4 /* XCFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +105,6 @@
 		B0395D0621141A8800427DBB /* SwiftFormat */ = {
 			isa = PBXGroup;
 			children = (
-				B0395D0821141A8800427DBB /* swiftformat */,
 				B0395D0C211423B400427DBB /* swiftformat-doc.txt */,
 				B0395D0721141A8800427DBB /* swiftformat.json */,
 			);
@@ -241,13 +238,13 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = "";
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = sugarmo;
 				TargetAttributes = {
 					B0A2939F1DAF64F700CF98C4 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = J2XWB65W94;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -258,10 +255,11 @@
 					B0A293BA1DAF650C00CF98C4 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = J2XWB65W94;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -269,7 +267,7 @@
 			};
 			buildConfigurationList = B0A2939B1DAF64F700CF98C4 /* Build configuration list for PBXProject "XCFormat" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -304,7 +302,6 @@
 				B02873A0209FF2C20093FE26 /* uncrustify-doc.txt in Resources */,
 				B0395D0D211423B400427DBB /* swiftformat-doc.txt in Resources */,
 				B0395D0921141A8800427DBB /* swiftformat.json in Resources */,
-				B0395D0A21141A8800427DBB /* swiftformat in Resources */,
 				B028739E209FF2C00093FE26 /* uncrustify in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -404,11 +402,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -417,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -457,10 +457,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -484,7 +485,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -506,7 +507,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -526,7 +527,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -546,7 +547,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

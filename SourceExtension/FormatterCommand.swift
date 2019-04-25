@@ -34,7 +34,7 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
     }()
 
     private let swiftFormatPath: String? = {
-        Bundle.main.path(forResource: "swiftformat", ofType: nil)
+        Bundle.main.path(forResource: "swiftformat", ofType: nil) ?? "/usr/local/bin/swiftformat"
     }()
 
     private let swiftFormatConfigPath: String? = {
