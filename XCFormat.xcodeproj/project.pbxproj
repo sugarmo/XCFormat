@@ -18,23 +18,23 @@
 		B02E501F2112DCD3004F0EA5 /* FormatterCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */; };
 		B0395D0921141A8800427DBB /* swiftformat.json in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0721141A8800427DBB /* swiftformat.json */; };
 		B0395D0D211423B400427DBB /* swiftformat-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0C211423B400427DBB /* swiftformat-doc.txt */; };
+		B0565F8D22D7C58700391279 /* swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = B0B6A3B322D78ED6005C8A5B /* swiftformat */; };
+		B0565F8F22D84E3400391279 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F8E22D84E3400391279 /* AppGroup.swift */; };
+		B0565F9022D84E9B00391279 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F8E22D84E3400391279 /* AppGroup.swift */; };
+		B0565F9222D84F4F00391279 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F9122D84F4F00391279 /* Executable.swift */; };
+		B0565F9522D84FC400391279 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F9122D84F4F00391279 /* Executable.swift */; };
+		B0565F9622D84FCA00391279 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC6B22720DBD00BD940C /* Util.swift */; };
+		B0565F9822D8527500391279 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F9722D8527500391279 /* Error.swift */; };
+		B0565F9922D852F500391279 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F9722D8527500391279 /* Error.swift */; };
+		B0565F9A22D858DC00391279 /* uncrustify-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0287397209FF27C0093FE26 /* uncrustify-doc.txt */; };
+		B0565F9B22D858DC00391279 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B0287399209FF27C0093FE26 /* uncrustify.cfg */; };
+		B0565F9C22D858DE00391279 /* swiftformat-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0C211423B400427DBB /* swiftformat-doc.txt */; };
+		B0565F9D22D858DE00391279 /* swiftformat.json in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0721141A8800427DBB /* swiftformat.json */; };
 		B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */; };
 		B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AE1DAF64F700CF98C4 /* Main.storyboard */; };
 		B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */; };
 		B0A293CB1DAF650C00CF98C4 /* SourceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B0A293BB1DAF650C00CF98C4 /* SourceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B0B6CC5E22720CC800BD940C /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3122720B7700BD940C /* CommandLine.swift */; };
-		B0B6CC5F22720CC800BD940C /* EnumAssociable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3522720B7700BD940C /* EnumAssociable.swift */; };
-		B0B6CC6022720CC800BD940C /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3322720B7700BD940C /* Formatter.swift */; };
-		B0B6CC6122720CC800BD940C /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3822720B7700BD940C /* Options.swift */; };
-		B0B6CC6222720CC800BD940C /* OptionsDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3422720B7700BD940C /* OptionsDescriptor.swift */; };
-		B0B6CC6322720CC800BD940C /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3B22720B7700BD940C /* Arguments.swift */; };
-		B0B6CC6422720CC800BD940C /* Inference.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3722720B7700BD940C /* Inference.swift */; };
-		B0B6CC6522720CC800BD940C /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3622720B7700BD940C /* Rules.swift */; };
-		B0B6CC6622720CC800BD940C /* ParsingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3922720B7700BD940C /* ParsingHelpers.swift */; };
-		B0B6CC6722720CC800BD940C /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3D22720B7800BD940C /* Examples.swift */; };
-		B0B6CC6822720CC800BD940C /* SwiftFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3222720B7700BD940C /* SwiftFormat.swift */; };
-		B0B6CC6922720CC800BD940C /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3022720B7700BD940C /* Tokenizer.swift */; };
-		B0B6CC6A22720CC800BD940C /* Globs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC3E22720B7800BD940C /* Globs.swift */; };
+		B0B6CC6C22720DBD00BD940C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC6B22720DBD00BD940C /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +75,9 @@
 		B0395D0721141A8800427DBB /* swiftformat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swiftformat.json; sourceTree = "<group>"; };
 		B0395D0B21141AD900427DBB /* Binary.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Binary.entitlements; sourceTree = "<group>"; };
 		B0395D0C211423B400427DBB /* swiftformat-doc.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "swiftformat-doc.txt"; sourceTree = "<group>"; };
+		B0565F8E22D84E3400391279 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		B0565F9122D84F4F00391279 /* Executable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
+		B0565F9722D8527500391279 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		B0A293A01DAF64F700CF98C4 /* XCFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A293AF1DAF64F700CF98C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,19 +87,8 @@
 		B0A293C11DAF650C00CF98C4 /* SourceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SourceExtension.entitlements; sourceTree = "<group>"; };
 		B0A293C81DAF650C00CF98C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A293DB1DAF8CA800CF98C4 /* XCFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XCFormat.entitlements; sourceTree = "<group>"; };
-		B0B6CC3022720B7700BD940C /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
-		B0B6CC3122720B7700BD940C /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
-		B0B6CC3222720B7700BD940C /* SwiftFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFormat.swift; sourceTree = "<group>"; };
-		B0B6CC3322720B7700BD940C /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
-		B0B6CC3422720B7700BD940C /* OptionsDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsDescriptor.swift; sourceTree = "<group>"; };
-		B0B6CC3522720B7700BD940C /* EnumAssociable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumAssociable.swift; sourceTree = "<group>"; };
-		B0B6CC3622720B7700BD940C /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
-		B0B6CC3722720B7700BD940C /* Inference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inference.swift; sourceTree = "<group>"; };
-		B0B6CC3822720B7700BD940C /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
-		B0B6CC3922720B7700BD940C /* ParsingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingHelpers.swift; sourceTree = "<group>"; };
-		B0B6CC3B22720B7700BD940C /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
-		B0B6CC3D22720B7800BD940C /* Examples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
-		B0B6CC3E22720B7800BD940C /* Globs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globs.swift; sourceTree = "<group>"; };
+		B0B6A3B322D78ED6005C8A5B /* swiftformat */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = swiftformat; sourceTree = "<group>"; };
+		B0B6CC6B22720DBD00BD940C /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +123,7 @@
 		B0395D0621141A8800427DBB /* SwiftFormat */ = {
 			isa = PBXGroup;
 			children = (
-				B0B6CC2F22720B6F00BD940C /* Sources */,
+				B0B6A3B322D78ED6005C8A5B /* swiftformat */,
 				B0395D0C211423B400427DBB /* swiftformat-doc.txt */,
 				B0395D0721141A8800427DBB /* swiftformat.json */,
 			);
@@ -175,6 +167,7 @@
 			children = (
 				B02E4FF82112D8FF004F0EA5 /* AppDelegate.swift */,
 				B02E50182112DA7A004F0EA5 /* MainViewController.swift */,
+				B0565F8E22D84E3400391279 /* AppGroup.swift */,
 				B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */,
 				B0A293AE1DAF64F700CF98C4 /* Main.storyboard */,
 				B0A293B11DAF64F700CF98C4 /* Info.plist */,
@@ -204,6 +197,9 @@
 			children = (
 				B02E501C2112DCBF004F0EA5 /* FormatterExtension.swift */,
 				B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */,
+				B0565F9722D8527500391279 /* Error.swift */,
+				B0565F9122D84F4F00391279 /* Executable.swift */,
+				B0B6CC6B22720DBD00BD940C /* Util.swift */,
 				B0A293C81DAF650C00CF98C4 /* Info.plist */,
 				B0A293C01DAF650C00CF98C4 /* Supporting Files */,
 			);
@@ -217,26 +213,6 @@
 				B0A293C11DAF650C00CF98C4 /* SourceExtension.entitlements */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B0B6CC2F22720B6F00BD940C /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				B0B6CC3122720B7700BD940C /* CommandLine.swift */,
-				B0B6CC3522720B7700BD940C /* EnumAssociable.swift */,
-				B0B6CC3322720B7700BD940C /* Formatter.swift */,
-				B0B6CC3822720B7700BD940C /* Options.swift */,
-				B0B6CC3422720B7700BD940C /* OptionsDescriptor.swift */,
-				B0B6CC3B22720B7700BD940C /* Arguments.swift */,
-				B0B6CC3722720B7700BD940C /* Inference.swift */,
-				B0B6CC3622720B7700BD940C /* Rules.swift */,
-				B0B6CC3922720B7700BD940C /* ParsingHelpers.swift */,
-				B0B6CC3D22720B7800BD940C /* Examples.swift */,
-				B0B6CC3222720B7700BD940C /* SwiftFormat.swift */,
-				B0B6CC3022720B7700BD940C /* Tokenizer.swift */,
-				B0B6CC3E22720B7800BD940C /* Globs.swift */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +270,9 @@
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -305,6 +284,9 @@
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -336,8 +318,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0565F9A22D858DC00391279 /* uncrustify-doc.txt in Resources */,
 				B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */,
 				B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */,
+				B0565F9B22D858DC00391279 /* uncrustify.cfg in Resources */,
+				B0565F9C22D858DE00391279 /* swiftformat-doc.txt in Resources */,
+				B0565F9D22D858DE00391279 /* swiftformat.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */,
+				B0565F8D22D7C58700391279 /* swiftformat in Resources */,
 				B02873A0209FF2C20093FE26 /* uncrustify-doc.txt in Resources */,
 				B0395D0D211423B400427DBB /* swiftformat-doc.txt in Resources */,
 				B0395D0921141A8800427DBB /* swiftformat.json in Resources */,
@@ -361,6 +348,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02E4FF92112D8FF004F0EA5 /* AppDelegate.swift in Sources */,
+				B0565F9522D84FC400391279 /* Executable.swift in Sources */,
+				B0565F9622D84FCA00391279 /* Util.swift in Sources */,
+				B0565F8F22D84E3400391279 /* AppGroup.swift in Sources */,
+				B0565F9922D852F500391279 /* Error.swift in Sources */,
 				B02E50192112DA7A004F0EA5 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,22 +360,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B6CC6722720CC800BD940C /* Examples.swift in Sources */,
-				B0B6CC6A22720CC800BD940C /* Globs.swift in Sources */,
-				B0B6CC6322720CC800BD940C /* Arguments.swift in Sources */,
-				B0B6CC6622720CC800BD940C /* ParsingHelpers.swift in Sources */,
-				B0B6CC5E22720CC800BD940C /* CommandLine.swift in Sources */,
+				B0565F9822D8527500391279 /* Error.swift in Sources */,
 				B02E501A2112DC84004F0EA5 /* Task.swift in Sources */,
-				B0B6CC6922720CC800BD940C /* Tokenizer.swift in Sources */,
+				B0565F9222D84F4F00391279 /* Executable.swift in Sources */,
+				B0565F9022D84E9B00391279 /* AppGroup.swift in Sources */,
 				B02E501F2112DCD3004F0EA5 /* FormatterCommand.swift in Sources */,
-				B0B6CC6022720CC800BD940C /* Formatter.swift in Sources */,
-				B0B6CC6522720CC800BD940C /* Rules.swift in Sources */,
-				B0B6CC6422720CC800BD940C /* Inference.swift in Sources */,
-				B0B6CC6122720CC800BD940C /* Options.swift in Sources */,
-				B0B6CC6822720CC800BD940C /* SwiftFormat.swift in Sources */,
+				B0B6CC6C22720DBD00BD940C /* Util.swift in Sources */,
 				B02E501B2112DC86004F0EA5 /* Constants.swift in Sources */,
-				B0B6CC5F22720CC800BD940C /* EnumAssociable.swift in Sources */,
-				B0B6CC6222720CC800BD940C /* OptionsDescriptor.swift in Sources */,
 				B02E501D2112DCBF004F0EA5 /* FormatterExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +449,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -521,7 +503,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -545,7 +527,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -567,7 +548,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -587,7 +567,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -607,7 +586,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

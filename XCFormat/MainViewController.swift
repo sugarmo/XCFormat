@@ -10,30 +10,14 @@ import Cocoa
 
 class MainViewController: NSViewController {
     @IBAction func editUncrustifyConfig(_ sender: Any) {
-        if let plugInsPath = Bundle.main.builtInPlugInsPath, FileManager.default.fileExists(atPath: plugInsPath) {
-            if let plugInsBundle = Bundle(path: plugInsPath) {
-                if let exPath = plugInsBundle.path(forResource: "SourceExtension", ofType: "appex") {
-                    if let exbundle = Bundle(path: exPath) {
-                        if let cfgPath = exbundle.path(forResource: "uncrustify", ofType: "cfg") {
-                            NSWorkspace.shared.selectFile(cfgPath, inFileViewerRootedAtPath: "")
-                        }
-                    }
-                }
-            }
+        if let path = try? Uncrustify.makeSharedConfigPath() {
+            NSWorkspace.shared.selectFile(path, inFileViewerRootedAtPath: "")
         }
     }
 
     @IBAction func editSwiftFormatConfig(_ sender: Any) {
-        if let plugInsPath = Bundle.main.builtInPlugInsPath, FileManager.default.fileExists(atPath: plugInsPath) {
-            if let plugInsBundle = Bundle(path: plugInsPath) {
-                if let exPath = plugInsBundle.path(forResource: "SourceExtension", ofType: "appex") {
-                    if let exbundle = Bundle(path: exPath) {
-                        if let cfgPath = exbundle.path(forResource: "swiftformat", ofType: "json") {
-                            NSWorkspace.shared.selectFile(cfgPath, inFileViewerRootedAtPath: "")
-                        }
-                    }
-                }
-            }
+        if let path = try? SwiftFormat.makeSharedConfigPath() {
+            NSWorkspace.shared.selectFile(path, inFileViewerRootedAtPath: "")
         }
     }
 

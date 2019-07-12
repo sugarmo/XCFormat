@@ -10,5 +10,4 @@ import Cocoa
 import XcodeKit
 
 class FormatterExtension: NSObject, XCSourceEditorExtension {
-
 }
