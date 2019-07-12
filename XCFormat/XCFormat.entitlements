@@ -6,7 +6,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.sugarmo.XCFormat</string>
+		<string>$(TeamIdentifierPrefix)group.com.sugarmo.XCFormat</string>
 	</array>
 </dict>
 </plist>
