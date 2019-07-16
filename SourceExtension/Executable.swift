@@ -67,6 +67,7 @@ enum Uncrustify: UserCustomizable, TaskArgProvider {
     static func makeTaskArgs(uti: String, isFragmented: Bool, sourceFile: String) throws -> [String] {
         var args = [String]()
 
+        args.append("--replace")
         args.append("--no-backup")
 
         let isObjectiveCFile = NSWorkspace.shared.type(uti, conformsToType: kUTTypeObjectiveCSource as String) ||
