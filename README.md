@@ -20,4 +20,4 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.
 
 ---
 
-[![](https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/macappstore-lrg.svg)](https://geo.itunes.apple.com/us/app/xcformat/id1165321484?mt=12)
+[![](https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/macappstore-lrg.svg)](https://apps.apple.com/us/app/xcformat/id1165321484?l=zh&ls=1&mt=12)
