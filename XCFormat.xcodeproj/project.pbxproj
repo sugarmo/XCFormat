@@ -30,6 +30,10 @@
 		B0565F9B22D858DC00391279 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B0287399209FF27C0093FE26 /* uncrustify.cfg */; };
 		B0565F9C22D858DE00391279 /* swiftformat-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0C211423B400427DBB /* swiftformat-doc.txt */; };
 		B0565F9D22D858DE00391279 /* swiftformat.json in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0721141A8800427DBB /* swiftformat.json */; };
+		B061F45022E1D1BF00D53444 /* SwiftFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F44F22E1D1BF00D53444 /* SwiftFormat.swift */; };
+		B061F45122E1D1BF00D53444 /* SwiftFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F44F22E1D1BF00D53444 /* SwiftFormat.swift */; };
+		B061F45322E1D1DA00D53444 /* Uncrustify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F45222E1D1DA00D53444 /* Uncrustify.swift */; };
+		B061F45422E1D1DA00D53444 /* Uncrustify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F45222E1D1DA00D53444 /* Uncrustify.swift */; };
 		B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */; };
 		B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AE1DAF64F700CF98C4 /* Main.storyboard */; };
 		B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */; };
@@ -78,6 +82,8 @@
 		B0565F8E22D84E3400391279 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		B0565F9122D84F4F00391279 /* Executable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
 		B0565F9722D8527500391279 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		B061F44F22E1D1BF00D53444 /* SwiftFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFormat.swift; sourceTree = "<group>"; };
+		B061F45222E1D1DA00D53444 /* Uncrustify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncrustify.swift; sourceTree = "<group>"; };
 		B0A293A01DAF64F700CF98C4 /* XCFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A293AF1DAF64F700CF98C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -199,6 +205,8 @@
 				B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */,
 				B0565F9722D8527500391279 /* Error.swift */,
 				B0565F9122D84F4F00391279 /* Executable.swift */,
+				B061F44F22E1D1BF00D53444 /* SwiftFormat.swift */,
+				B061F45222E1D1DA00D53444 /* Uncrustify.swift */,
 				B0B6CC6B22720DBD00BD940C /* Util.swift */,
 				B0A293C81DAF650C00CF98C4 /* Info.plist */,
 				B0A293C01DAF650C00CF98C4 /* Supporting Files */,
@@ -348,11 +356,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02E4FF92112D8FF004F0EA5 /* AppDelegate.swift in Sources */,
+				B061F45022E1D1BF00D53444 /* SwiftFormat.swift in Sources */,
 				B0565F9522D84FC400391279 /* Executable.swift in Sources */,
 				B0565F9622D84FCA00391279 /* Util.swift in Sources */,
 				B0565F8F22D84E3400391279 /* AppGroup.swift in Sources */,
 				B0565F9922D852F500391279 /* Error.swift in Sources */,
 				B02E50192112DA7A004F0EA5 /* MainViewController.swift in Sources */,
+				B061F45322E1D1DA00D53444 /* Uncrustify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0565F9822D8527500391279 /* Error.swift in Sources */,
+				B061F45122E1D1BF00D53444 /* SwiftFormat.swift in Sources */,
 				B02E501A2112DC84004F0EA5 /* Task.swift in Sources */,
 				B0565F9222D84F4F00391279 /* Executable.swift in Sources */,
 				B0565F9022D84E9B00391279 /* AppGroup.swift in Sources */,
@@ -368,6 +379,7 @@
 				B0B6CC6C22720DBD00BD940C /* Util.swift in Sources */,
 				B02E501B2112DC86004F0EA5 /* Constants.swift in Sources */,
 				B02E501D2112DCBF004F0EA5 /* FormatterExtension.swift in Sources */,
+				B061F45422E1D1DA00D53444 /* Uncrustify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

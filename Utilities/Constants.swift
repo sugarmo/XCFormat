@@ -8,8 +8,4 @@
 
 import Foundation
 
-enum AppError: Error {
-    case notAnError
-}
-
 typealias CommandCompletion = (_ error: Error?) -> Void
