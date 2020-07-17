@@ -17,8 +17,6 @@
 		B02E501F2112DCD3004F0EA5 /* FormatterCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */; };
 		B0395D0921141A8800427DBB /* swiftformat.json in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0721141A8800427DBB /* swiftformat.json */; };
 		B0395D0D211423B400427DBB /* swiftformat-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0C211423B400427DBB /* swiftformat-doc.txt */; };
-		B04CA10A24C21AF500FABA63 /* uncrustify in CopyFiles */ = {isa = PBXBuildFile; fileRef = B04CA0FF24C2190E00FABA63 /* uncrustify */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		B04CA10B24C21AFF00FABA63 /* swiftformat in CopyFiles */ = {isa = PBXBuildFile; fileRef = B04CA04B24C218FF00FABA63 /* swiftformat */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B0565F8F22D84E3400391279 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F8E22D84E3400391279 /* AppGroup.swift */; };
 		B0565F9022D84E9B00391279 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F8E22D84E3400391279 /* AppGroup.swift */; };
 		B0565F9222D84F4F00391279 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F9122D84F4F00391279 /* Executable.swift */; };
@@ -39,6 +37,8 @@
 		B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */; };
 		B0A293CB1DAF650C00CF98C4 /* SourceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B0A293BB1DAF650C00CF98C4 /* SourceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B0B6CC6C22720DBD00BD940C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC6B22720DBD00BD940C /* Util.swift */; };
+		B0FD8AD024C2A6420063C930 /* uncrustify in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA0FF24C2190E00FABA63 /* uncrustify */; };
+		B0FD8AD124C2A6470063C930 /* swiftformat in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA04B24C218FF00FABA63 /* swiftformat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,17 +115,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B04CA10924C21AE600FABA63 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				B04CA10B24C21AFF00FABA63 /* swiftformat in CopyFiles */,
-				B04CA10A24C21AF500FABA63 /* uncrustify in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B0A293CF1DAF650C00CF98C4 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +124,18 @@
 				B0A293CB1DAF650C00CF98C4 /* SourceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FD8ACF24C2A6390063C930 /* Copy CLI */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				B0FD8AD124C2A6470063C930 /* swiftformat in Copy CLI */,
+				B0FD8AD024C2A6420063C930 /* uncrustify in Copy CLI */,
+			);
+			name = "Copy CLI";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -347,7 +348,8 @@
 				B0A293B71DAF650C00CF98C4 /* Sources */,
 				B0A293B81DAF650C00CF98C4 /* Frameworks */,
 				B0A293B91DAF650C00CF98C4 /* Resources */,
-				B04CA10924C21AE600FABA63 /* CopyFiles */,
+				B0FD8AD224C2C0C30063C930 /* Code Sign CLI */,
+				B0FD8ACF24C2A6390063C930 /* Copy CLI */,
 			);
 			buildRules = (
 			);
@@ -372,9 +374,7 @@
 				TargetAttributes = {
 					B0A2939F1DAF64F700CF98C4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = J2XWB65W94;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
@@ -508,6 +508,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B0FD8AD224C2C0C30063C930 /* Code Sign CLI */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Code Sign CLI";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Scripts/codesign-build.sh\" swiftformat\n\"${SRCROOT}/Scripts/codesign-build.sh\" uncrustify\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B0A2939C1DAF64F700CF98C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -604,7 +625,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -665,7 +686,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -695,7 +716,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = XCFormat/XCFormat.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J2XWB65W94;
 				INFOPLIST_FILE = XCFormat/Info.plist;
@@ -704,7 +726,8 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat;
-				PRODUCT_NAME = XCFormat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -717,7 +740,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = XCFormat/XCFormat.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J2XWB65W94;
 				INFOPLIST_FILE = XCFormat/Info.plist;
@@ -726,7 +750,8 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat;
-				PRODUCT_NAME = XCFormat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
 			};
 			name = Release;
@@ -735,7 +760,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SourceExtension/SourceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J2XWB65W94;
 				INFOPLIST_FILE = SourceExtension/Info.plist;
@@ -754,7 +778,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SourceExtension/SourceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J2XWB65W94;
 				INFOPLIST_FILE = SourceExtension/Info.plist;
