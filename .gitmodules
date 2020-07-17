@@ -1,0 +1,6 @@
+[submodule "Externals/uncrustify"]
+	path = Externals/uncrustify
+	url = https://github.com/uncrustify/uncrustify
+[submodule "Externals/SwiftFormat"]
+	path = Externals/SwiftFormat
+	url = https://github.com/nicklockwood/SwiftFormat
