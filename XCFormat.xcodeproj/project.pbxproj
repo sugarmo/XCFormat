@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B028739E209FF2C00093FE26 /* uncrustify in Resources */ = {isa = PBXBuildFile; fileRef = B0287398209FF27C0093FE26 /* uncrustify */; };
 		B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B0287399209FF27C0093FE26 /* uncrustify.cfg */; };
 		B02873A0209FF2C20093FE26 /* uncrustify-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0287397209FF27C0093FE26 /* uncrustify-doc.txt */; };
 		B02E4FF92112D8FF004F0EA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E4FF82112D8FF004F0EA5 /* AppDelegate.swift */; };
@@ -18,7 +17,8 @@
 		B02E501F2112DCD3004F0EA5 /* FormatterCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */; };
 		B0395D0921141A8800427DBB /* swiftformat.json in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0721141A8800427DBB /* swiftformat.json */; };
 		B0395D0D211423B400427DBB /* swiftformat-doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0C211423B400427DBB /* swiftformat-doc.txt */; };
-		B0565F8D22D7C58700391279 /* swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = B0B6A3B322D78ED6005C8A5B /* swiftformat */; };
+		B04CA10A24C21AF500FABA63 /* uncrustify in CopyFiles */ = {isa = PBXBuildFile; fileRef = B04CA0FF24C2190E00FABA63 /* uncrustify */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B04CA10B24C21AFF00FABA63 /* swiftformat in CopyFiles */ = {isa = PBXBuildFile; fileRef = B04CA04B24C218FF00FABA63 /* swiftformat */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B0565F8F22D84E3400391279 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F8E22D84E3400391279 /* AppGroup.swift */; };
 		B0565F9022D84E9B00391279 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F8E22D84E3400391279 /* AppGroup.swift */; };
 		B0565F9222D84F4F00391279 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F9122D84F4F00391279 /* Executable.swift */; };
@@ -42,6 +42,69 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B04CA04424C218FF00FABA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 01A0EAA41D5DB4CF00A0A8E3;
+			remoteInfo = SwiftFormat;
+		};
+		B04CA04624C218FF00FABA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 01A0EAAE1D5DB4D000A0A8E3;
+			remoteInfo = SwiftFormatTests;
+		};
+		B04CA04824C218FF00FABA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 015AF2C51DC6A538008F0A8C;
+			remoteInfo = SwiftFormatPerfTests;
+		};
+		B04CA04A24C218FF00FABA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 01A0EACA1D5DB5F500A0A8E3;
+			remoteInfo = CommandLineTool;
+		};
+		B04CA04C24C218FF00FABA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 90C4B6CA1DA4B04A009EB000;
+			remoteInfo = "SwiftFormat for Xcode";
+		};
+		B04CA04E24C218FF00FABA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 90C4B6DD1DA4B059009EB000;
+			remoteInfo = "Editor Extension";
+		};
+		B04CA0FE24C2190E00FABA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6B323086BD345F297590A70;
+			remoteInfo = uncrustify;
+		};
+		B04CA10524C21A7500FABA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D9BBE8C1AE174D8CB2B1319F;
+			remoteInfo = uncrustify;
+		};
+		B04CA10724C21A7B00FABA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 01A0EAC91D5DB5F500A0A8E3;
+			remoteInfo = CommandLineTool;
+		};
 		B0A293C91DAF650C00CF98C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0A293981DAF64F700CF98C4 /* Project object */;
@@ -52,6 +115,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B04CA10924C21AE600FABA63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				B04CA10B24C21AFF00FABA63 /* swiftformat in CopyFiles */,
+				B04CA10A24C21AF500FABA63 /* uncrustify in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0A293CF1DAF650C00CF98C4 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,7 +143,6 @@
 		B01536F92111C7F100F89B9A /* XCFormat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCFormat-Bridging-Header.h"; sourceTree = "<group>"; };
 		B01536FA2111C7F100F89B9A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		B0287397209FF27C0093FE26 /* uncrustify-doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "uncrustify-doc.txt"; sourceTree = "<group>"; };
-		B0287398209FF27C0093FE26 /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
 		B0287399209FF27C0093FE26 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
 		B02E4FF62112B063004F0EA5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B02E4FF82112D8FF004F0EA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +152,8 @@
 		B0395D0721141A8800427DBB /* swiftformat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swiftformat.json; sourceTree = "<group>"; };
 		B0395D0B21141AD900427DBB /* Binary.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Binary.entitlements; sourceTree = "<group>"; };
 		B0395D0C211423B400427DBB /* swiftformat-doc.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "swiftformat-doc.txt"; sourceTree = "<group>"; };
+		B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftFormat.xcodeproj; path = Externals/SwiftFormat/SwiftFormat.xcodeproj; sourceTree = SOURCE_ROOT; };
+		B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uncrustify.xcodeproj; path = Externals/uncrustify/build/uncrustify.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B0565F8E22D84E3400391279 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		B0565F9122D84F4F00391279 /* Executable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
 		B0565F9722D8527500391279 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -93,7 +168,6 @@
 		B0A293C11DAF650C00CF98C4 /* SourceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SourceExtension.entitlements; sourceTree = "<group>"; };
 		B0A293C81DAF650C00CF98C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A293DB1DAF8CA800CF98C4 /* XCFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XCFormat.entitlements; sourceTree = "<group>"; };
-		B0B6A3B322D78ED6005C8A5B /* swiftformat */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = swiftformat; sourceTree = "<group>"; };
 		B0B6CC6B22720DBD00BD940C /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +193,7 @@
 		B0287396209FF25F0093FE26 /* uncrustify */ = {
 			isa = PBXGroup;
 			children = (
-				B0287398209FF27C0093FE26 /* uncrustify */,
+				B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */,
 				B0287397209FF27C0093FE26 /* uncrustify-doc.txt */,
 				B0287399209FF27C0093FE26 /* uncrustify.cfg */,
 			);
@@ -129,11 +203,32 @@
 		B0395D0621141A8800427DBB /* SwiftFormat */ = {
 			isa = PBXGroup;
 			children = (
-				B0B6A3B322D78ED6005C8A5B /* swiftformat */,
+				B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */,
 				B0395D0C211423B400427DBB /* swiftformat-doc.txt */,
 				B0395D0721141A8800427DBB /* swiftformat.json */,
 			);
 			path = SwiftFormat;
+			sourceTree = "<group>";
+		};
+		B04CA03C24C218FF00FABA63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B04CA04524C218FF00FABA63 /* SwiftFormat.framework */,
+				B04CA04724C218FF00FABA63 /* SwiftFormatTests.xctest */,
+				B04CA04924C218FF00FABA63 /* SwiftFormatPerfTests.xctest */,
+				B04CA04B24C218FF00FABA63 /* swiftformat */,
+				B04CA04D24C218FF00FABA63 /* SwiftFormat for Xcode.app */,
+				B04CA04F24C218FF00FABA63 /* SwiftFormat.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B04CA05124C2190E00FABA63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B04CA0FF24C2190E00FABA63 /* uncrustify */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B07E41271DB08882008104EA /* Utilities */ = {
@@ -252,10 +347,13 @@
 				B0A293B71DAF650C00CF98C4 /* Sources */,
 				B0A293B81DAF650C00CF98C4 /* Frameworks */,
 				B0A293B91DAF650C00CF98C4 /* Resources */,
+				B04CA10924C21AE600FABA63 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B04CA10824C21A7B00FABA63 /* PBXTargetDependency */,
+				B04CA10624C21A7500FABA63 /* PBXTargetDependency */,
 			);
 			name = SourceExtension;
 			productName = SourceExtension;
@@ -313,6 +411,16 @@
 			mainGroup = B0A293971DAF64F700CF98C4;
 			productRefGroup = B0A293A11DAF64F700CF98C4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B04CA03C24C218FF00FABA63 /* Products */;
+					ProjectRef = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
+				},
+				{
+					ProductGroup = B04CA05124C2190E00FABA63 /* Products */;
+					ProjectRef = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B0A2939F1DAF64F700CF98C4 /* XCFormat */,
@@ -320,6 +428,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B04CA04524C218FF00FABA63 /* SwiftFormat.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftFormat.framework;
+			remoteRef = B04CA04424C218FF00FABA63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B04CA04724C218FF00FABA63 /* SwiftFormatTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftFormatTests.xctest;
+			remoteRef = B04CA04624C218FF00FABA63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B04CA04924C218FF00FABA63 /* SwiftFormatPerfTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftFormatPerfTests.xctest;
+			remoteRef = B04CA04824C218FF00FABA63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B04CA04B24C218FF00FABA63 /* swiftformat */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = swiftformat;
+			remoteRef = B04CA04A24C218FF00FABA63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B04CA04D24C218FF00FABA63 /* SwiftFormat for Xcode.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "SwiftFormat for Xcode.app";
+			remoteRef = B04CA04C24C218FF00FABA63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B04CA04F24C218FF00FABA63 /* SwiftFormat.appex */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.app-extension";
+			path = SwiftFormat.appex;
+			remoteRef = B04CA04E24C218FF00FABA63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B04CA0FF24C2190E00FABA63 /* uncrustify */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = uncrustify;
+			remoteRef = B04CA0FE24C2190E00FABA63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B0A2939E1DAF64F700CF98C4 /* Resources */ = {
@@ -340,11 +500,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */,
-				B0565F8D22D7C58700391279 /* swiftformat in Resources */,
 				B02873A0209FF2C20093FE26 /* uncrustify-doc.txt in Resources */,
 				B0395D0D211423B400427DBB /* swiftformat-doc.txt in Resources */,
 				B0395D0921141A8800427DBB /* swiftformat.json in Resources */,
-				B028739E209FF2C00093FE26 /* uncrustify in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +544,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B04CA10624C21A7500FABA63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = uncrustify;
+			targetProxy = B04CA10524C21A7500FABA63 /* PBXContainerItemProxy */;
+		};
+		B04CA10824C21A7B00FABA63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CommandLineTool;
+			targetProxy = B04CA10724C21A7B00FABA63 /* PBXContainerItemProxy */;
+		};
 		B0A293CA1DAF650C00CF98C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B0A293BA1DAF650C00CF98C4 /* SourceExtension */;
@@ -536,7 +704,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XCFormat;
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -558,7 +726,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XCFormat;
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
 			};
 			name = Release;
