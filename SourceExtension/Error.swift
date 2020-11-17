@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import OSLog
 
 enum FormatterError: Error, LocalizedError, CustomNSError {
     case failure(reason: String)
@@ -18,14 +19,8 @@ enum FormatterError: Error, LocalizedError, CustomNSError {
         case let .failure(reason):
             return reason
         case let .execError(print):
-            if let regexp = try? NSRegularExpression(pattern: #"error:\s*(.+):"#, options: .caseInsensitive) {
-                if let match = regexp.firstMatch(in: print, options: [], range: NSRange(location: 0, length: print.count)) {
-                    if let range = Range(match.range(at: 1), in: print) {
-                        return String(print[range])
-                    }
-                }
-            }
-            return print
+            os_log(.error, log: .default, "[XCFormat] exec error: %{public}@", print)
+            return "Exec error, please check the log in Console."
         case .missingFile:
             return "Missing File"
         }

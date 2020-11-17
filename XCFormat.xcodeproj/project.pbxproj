@@ -32,8 +32,8 @@
 		B061F45122E1D1BF00D53444 /* SwiftFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F44F22E1D1BF00D53444 /* SwiftFormat.swift */; };
 		B061F45322E1D1DA00D53444 /* Uncrustify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F45222E1D1DA00D53444 /* Uncrustify.swift */; };
 		B061F45422E1D1DA00D53444 /* Uncrustify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F45222E1D1DA00D53444 /* Uncrustify.swift */; };
-		B06D20B02563B11E009FB754 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06D1FFA2563B11E009FB754 /* XcodeKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		B07A5EBD2563BC17005FD116 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B06D1FFA2563B11E009FB754 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B07A5EC02563C3CE005FD116 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06D1FFA2563B11E009FB754 /* XcodeKit.framework */; };
+		B07A5EC12563C3CE005FD116 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B06D1FFA2563B11E009FB754 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */; };
 		B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AE1DAF64F700CF98C4 /* Main.storyboard */; };
 		B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */; };
@@ -117,13 +117,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B07A5D442563B9E7005FD116 /* Embed Frameworks */ = {
+		B07A5EC22563C3CE005FD116 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B07A5EBD2563BC17005FD116 /* XcodeKit.framework in Embed Frameworks */,
+				B07A5EC12563C3CE005FD116 /* XcodeKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,8 +198,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B06D20B02563B11E009FB754 /* XcodeKit.framework in Frameworks */,
 				B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */,
+				B07A5EC02563C3CE005FD116 /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +366,7 @@
 				B0A293B81DAF650C00CF98C4 /* Frameworks */,
 				B0FD8AD224C2C0C30063C930 /* Code Sign CLI */,
 				B0FD8ACF24C2A6390063C930 /* Copy CLI */,
-				B07A5D442563B9E7005FD116 /* Embed Frameworks */,
+				B07A5EC22563C3CE005FD116 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -662,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -717,7 +717,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
