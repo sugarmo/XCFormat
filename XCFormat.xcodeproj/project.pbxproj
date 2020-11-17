@@ -33,7 +33,7 @@
 		B061F45322E1D1DA00D53444 /* Uncrustify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F45222E1D1DA00D53444 /* Uncrustify.swift */; };
 		B061F45422E1D1DA00D53444 /* Uncrustify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F45222E1D1DA00D53444 /* Uncrustify.swift */; };
 		B06D20B02563B11E009FB754 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06D1FFA2563B11E009FB754 /* XcodeKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		B07A5DFB2563B9FD005FD116 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B07A5DFA2563B9FD005FD116 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B07A5EBD2563BC17005FD116 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B06D1FFA2563B11E009FB754 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */; };
 		B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AE1DAF64F700CF98C4 /* Main.storyboard */; };
 		B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */; };
@@ -123,7 +123,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B07A5DFB2563B9FD005FD116 /* XcodeKit.framework in Embed Frameworks */,
+				B07A5EBD2563BC17005FD116 /* XcodeKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,7 +174,6 @@
 		B061F44F22E1D1BF00D53444 /* SwiftFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFormat.swift; sourceTree = "<group>"; };
 		B061F45222E1D1DA00D53444 /* Uncrustify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncrustify.swift; sourceTree = "<group>"; };
 		B06D1FFA2563B11E009FB754 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
-		B07A5DFA2563B9FD005FD116 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		B0A293A01DAF64F700CF98C4 /* XCFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A293AF1DAF64F700CF98C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -261,7 +260,6 @@
 		B0A293971DAF64F700CF98C4 = {
 			isa = PBXGroup;
 			children = (
-				B07A5DFA2563B9FD005FD116 /* XcodeKit.framework */,
 				B07E41271DB08882008104EA /* Utilities */,
 				B0A293A21DAF64F700CF98C4 /* XCFormat */,
 				B0287396209FF25F0093FE26 /* uncrustify */,
@@ -646,7 +644,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -707,7 +705,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
