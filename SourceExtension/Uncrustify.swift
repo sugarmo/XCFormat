@@ -17,6 +17,8 @@ enum Uncrustify: Executable {
 
     static let docName: String = "uncrustify-doc.txt"
 
+    static let websiteURL = URL(string: "https://github.com/uncrustify/uncrustify")
+
     static let execPath: String = Bundle.main.path(forResource: "uncrustify", ofType: nil)!
 
     static func makePathExtension(uti: String) -> String? {
@@ -41,10 +43,14 @@ enum Uncrustify: Executable {
             args.append("--frag")
         }
 
-        args.append(contentsOf: ["-c", try makeSharedConfigPath()])
+        args.append(contentsOf: ["-c", try prepareUserConfig()])
 
         args.append(sourceFile)
 
         return args
+    }
+
+    static func appDidLaunch() {
+        removeUserDoc()
     }
 }

@@ -10,4 +10,8 @@ import Cocoa
 import XcodeKit
 
 class FormatterExtension: NSObject, XCSourceEditorExtension {
+    func extensionDidFinishLaunching() {
+        SwiftFormat.appDidLaunch()
+        Uncrustify.appDidLaunch()
+    }
 }

@@ -9,24 +9,39 @@
 import Cocoa
 
 class MainViewController: NSViewController {
-    @IBOutlet weak var usageLabel: NSTextFieldCell!
-    @IBOutlet weak var uncrustifyLabel: NSTextField!
-    @IBOutlet weak var swiftFormatLabel: NSTextField!
-    
+    // MARK: - SwiftFormat
 
-    @IBAction func editUncrustifyConfig(_ sender: Any) {
-        if let path = try? Uncrustify.makeSharedConfigPath() {
+    @IBAction func swiftFormatConfig(_ sender: Any) {
+        if let path = SwiftFormat.userConfigPath(createDirectoryIfAbsent: true) {
             NSWorkspace.shared.selectFile(path, inFileViewerRootedAtPath: "")
         }
     }
 
-    @IBAction func editSwiftFormatConfig(_ sender: Any) {
-        if let path = try? SwiftFormat.makeSharedConfigPath() {
+    @IBAction func swiftFormatReset(_ sender: Any) {
+        SwiftFormat.resetConfigToDefault()
+    }
+
+    @IBAction func swiftFormatView(_ sender: Any) {
+        if let url = SwiftFormat.websiteURL {
+            NSWorkspace.shared.open(url)
+        }
+    }
+
+    // MARK: - Uncrustify
+
+    @IBAction func uncrustifyConfig(_ sender: Any) {
+        if let path = Uncrustify.userConfigPath(createDirectoryIfAbsent: true) {
             NSWorkspace.shared.selectFile(path, inFileViewerRootedAtPath: "")
         }
     }
 
-    @IBAction func quit(_ sender: Any) {
-        NSApp.terminate(sender)
+    @IBAction func uncrustifyReset(_ sender: Any) {
+        Uncrustify.resetConfigToDefault()
+    }
+
+    @IBAction func uncrustifyView(_ sender: Any) {
+        if let url = Uncrustify.websiteURL {
+            NSWorkspace.shared.open(url)
+        }
     }
 }

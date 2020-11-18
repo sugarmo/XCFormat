@@ -9,11 +9,45 @@
 import Cocoa
 
 enum SwiftFormat: Executable {
+    struct LegacyConfig: Codable {
+        var rules: [String: Bool]
+        var options: [String: String]
+
+        func migrated() -> Config {
+            let rules = self.rules.compactMap { ele -> String? in
+                // ranges 不是一个 rule，但过去的配置文件写错进去了
+                if ele.value, ele.key != "ranges" {
+                    return ele.key
+                }
+                return nil
+            }
+
+            return Config(rules: rules, options: options)
+        }
+    }
+
+    struct Config: Codable {
+        var rules: [String]
+        var options: [String: String]
+
+        func append(toArgs args: inout [String]) {
+            args.append("--rules")
+            args.append(rules.joined(separator: ","))
+
+            for option in options {
+                args.append(option.key)
+                args.append(option.value)
+            }
+        }
+    }
+
     static let supportedUTIs: Set<String> = ["public.swift-source", "com.apple.dt.playground", "com.apple.dt.playgroundpage"]
 
     static let configName: String = "swiftformat.json"
 
     static let docName: String = "swiftformat-doc.txt"
+
+    static let websiteURL = URL(string: "https://github.com/nicklockwood/SwiftFormat")
 
     static let execPath: String = Bundle.main.path(forResource: "swiftformat", ofType: nil)!
 
@@ -27,53 +61,40 @@ enum SwiftFormat: Executable {
         if isFragmented {
             args.append(contentsOf: ["--fragment", "true"])
         }
-        args.append(contentsOf: try makeOptions())
-        args.append(contentsOf: ["--rules", try makeRules()])
+
+        try makeConfig().append(toArgs: &args)
+
         args.append(sourceFile)
 
         return args
     }
 
-    static func makeRules() throws -> String {
-        let configPath = try makeSharedConfigPath()
+    static func makeConfig() throws -> Config {
+        let configPath = try prepareUserConfig()
+        let configURL = URL(fileURLWithPath: configPath)
+        let data = try Data(contentsOf: configURL)
 
-        let data = try Data(contentsOf: URL(fileURLWithPath: configPath))
-
-        if let root = try JSONSerialization.jsonObject(with: data, options: []) as? [String: [String: Any]] {
-            for (sectionName, sectionDict) in root {
-                if sectionName == "rules", let dict = sectionDict as? [String: Bool] {
-                    var rules = [String]()
-                    for (ruleName, ruleEnabled) in dict {
-                        if ruleEnabled {
-                            rules.append(ruleName)
-                        }
-                    }
-                    return rules.joined(separator: ",")
-                }
-            }
-        }
-
-        return ""
+        return try JSONDecoder().decode(Config.self, from: data)
     }
 
-    static func makeOptions() throws -> [String] {
-        let configPath = try makeSharedConfigPath()
+    static func appDidLaunch() {
+        removeUserDoc()
 
-        let data = try Data(contentsOf: URL(fileURLWithPath: configPath))
-
-        if let root = try JSONSerialization.jsonObject(with: data, options: []) as? [String: [String: Any]] {
-            for (sectionName, sectionDict) in root {
-                if sectionName == "options", let dict = sectionDict as? [String: String] {
-                    var options = [String]()
-                    for (optionName, optionValue) in dict {
-                        options.append(optionName)
-                        options.append(optionValue)
-                    }
-                    return options
-                }
+        // migrate old config
+        if let configPath = userConfigPath() {
+            do {
+                let configURL = URL(fileURLWithPath: configPath)
+                let existData = try Data(contentsOf: configURL)
+                let oldConfig = try JSONDecoder().decode(LegacyConfig.self, from: existData)
+                print("If no error, that means need to migrate old config.")
+                let newConfig = oldConfig.migrated()
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                let newData = try encoder.encode(newConfig)
+                try newData.write(to: configURL)
+            } catch {
+                print(error)
             }
         }
-
-        return []
     }
 }

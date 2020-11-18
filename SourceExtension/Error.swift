@@ -12,17 +12,18 @@ import OSLog
 enum FormatterError: Error, LocalizedError, CustomNSError {
     case failure(reason: String)
     case execError(print: String)
-    case missingFile
 
     var localizedDescription: String {
         switch self {
         case let .failure(reason):
             return reason
         case let .execError(print):
-            os_log(.error, log: .default, "[XCFormat] exec error: %{public}@", print)
-            return "Exec error, please check the log in Console."
-        case .missingFile:
-            return "Missing File"
+            if print.contains(where: { $0.isNewline }) {
+                os_log(.error, log: .default, "[XCFormat] exec error: %{public}@", print)
+                return "Error message is too long, please check the log in Console."
+            } else {
+                return print
+            }
         }
     }
 

@@ -97,7 +97,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="XCFormat" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="41" y="-119"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -200,6 +200,9 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="swiftFormatConfig:" target="XfG-lQ-9wD" id="pw5-mA-hXP"/>
+                                                        </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KRm-Ln-i9T">
                                                         <rect key="frame" x="65" y="7" width="132" height="32"/>
@@ -207,6 +210,9 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="swiftFormatReset:" target="XfG-lQ-9wD" id="Mgp-I4-wfQ"/>
+                                                        </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-GD-Cgc">
                                                         <rect key="frame" x="195" y="7" width="126" height="32"/>
@@ -214,6 +220,9 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="swiftFormatView:" target="XfG-lQ-9wD" id="J5l-cr-l5k"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <visibilityPriorities>
@@ -262,6 +271,9 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="uncrustifyConfig:" target="XfG-lQ-9wD" id="zOF-cV-MeJ"/>
+                                                        </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D4X-m8-aQ3">
                                                         <rect key="frame" x="65" y="10" width="132" height="32"/>
@@ -269,6 +281,9 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="uncrustifyReset:" target="XfG-lQ-9wD" id="NqS-Ml-hP6"/>
+                                                        </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3V2-0T-I9C">
                                                         <rect key="frame" x="195" y="10" width="126" height="32"/>
@@ -276,6 +291,9 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="uncrustifyView:" target="XfG-lQ-9wD" id="zig-wQ-yhR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <visibilityPriorities>
@@ -345,7 +363,7 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239" y="861"/>
+            <point key="canvasLocation" x="76" y="1078"/>
         </scene>
     </scenes>
 </document>

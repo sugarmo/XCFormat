@@ -13,11 +13,15 @@ protocol Executable {
 
     static var docName: String { get }
 
+    static var websiteURL: URL? { get }
+
     static var execPath: String { get }
 
     static func makeTaskArgs(uti: String, isFragmented: Bool, sourceFile: String) throws -> [String]
 
     static func makePathExtension(uti: String) -> String?
+
+    static func appDidLaunch()
 }
 
 extension Executable {
@@ -28,33 +32,66 @@ extension Executable {
     //        return nil
     //    }
 
-    static func makeSharedConfigPath() throws -> String {
-        guard let groupPath = AppGroup.makeRootPath() else {
-            throw FormatterError.missingFile
+    static func userConfigsDirectory(createIfAbsent: Bool = false) -> String? {
+        guard let appGroupPath = AppGroup.makeRootPath() else {
+            return nil
         }
 
-        let configsPath = groupPath.bridged().appendingPathComponent("Configs")
+        let path = appGroupPath.bridged().appendingPathComponent("Configs")
 
-        if !FileManager.default.fileExists(atPath: configsPath) {
-            try FileManager.default.createDirectory(atPath: configsPath, withIntermediateDirectories: true, attributes: nil)
-        }
-
-        let sharedConfigPath = configsPath.bridged().appendingPathComponent(configName)
-
-        if !FileManager.default.fileExists(atPath: sharedConfigPath) {
-            if let configTemplatePath = Bundle.main.path(forResource: configName, ofType: nil) {
-                try FileManager.default.copyItem(atPath: configTemplatePath, toPath: sharedConfigPath)
+        if createIfAbsent, !FileManager.default.fileExists(atPath: path) {
+            do {
+                try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                return nil
             }
         }
 
-        let sharedDocPath = configsPath.bridged().appendingPathComponent(docName)
+        return path
+    }
 
-        if !FileManager.default.fileExists(atPath: sharedDocPath) {
-            if let docSourcePath = Bundle.main.path(forResource: docName, ofType: nil) {
-                try FileManager.default.copyItem(atPath: docSourcePath, toPath: sharedDocPath)
+    static func defaultConfigPath() -> String? {
+        Bundle.main.path(forResource: configName, ofType: nil)
+    }
+
+    static func userConfigPath(createDirectoryIfAbsent: Bool = false) -> String? {
+        userConfigsDirectory(createIfAbsent: createDirectoryIfAbsent)?.bridged().appendingPathComponent(configName)
+    }
+
+    static func docPath() -> String? {
+        Bundle.main.path(forResource: docName, ofType: nil)
+    }
+
+    static func resetConfigToDefault() {
+        if let source = defaultConfigPath(), let destination = userConfigPath(createDirectoryIfAbsent: true) {
+            try? FileManager.default.removeItem(atPath: destination)
+            try? FileManager.default.copyItem(atPath: source, toPath: destination)
+        }
+    }
+
+    static func prepareUserConfig() throws -> String {
+        guard let destination = userConfigPath(createDirectoryIfAbsent: true) else {
+            throw FormatterError.failure(reason: "Config file not found.")
+        }
+
+        if !FileManager.default.fileExists(atPath: destination) {
+            guard let source = defaultConfigPath() else {
+                throw FormatterError.failure(reason: "Default config file not found.")
+            }
+
+            do {
+                try FileManager.default.copyItem(atPath: source, toPath: destination)
+            } catch {
+                throw FormatterError.failure(reason: "Copy default config file failed.")
             }
         }
 
-        return sharedConfigPath
+        return destination
+    }
+
+    static func removeUserDoc() {
+        if let userDocPath = userConfigsDirectory()?.bridged().appendingPathComponent(docName) {
+            try? FileManager.default.removeItem(atPath: userDocPath)
+        }
     }
 }
