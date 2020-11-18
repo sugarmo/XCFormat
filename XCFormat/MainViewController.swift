@@ -9,6 +9,11 @@
 import Cocoa
 
 class MainViewController: NSViewController {
+    @IBOutlet weak var usageLabel: NSTextFieldCell!
+    @IBOutlet weak var uncrustifyLabel: NSTextField!
+    @IBOutlet weak var swiftFormatLabel: NSTextField!
+    
+
     @IBAction func editUncrustifyConfig(_ sender: Any) {
         if let path = try? Uncrustify.makeSharedConfigPath() {
             NSWorkspace.shared.selectFile(path, inFileViewerRootedAtPath: "")

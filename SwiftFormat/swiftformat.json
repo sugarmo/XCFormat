@@ -53,7 +53,7 @@
   "options": {
       "--allman": "false",
       "--wraparguments": "disabled",
-      "--wrapelements": "disabled",
+      "--wrapcollections": "disabled",
       "--self": "remove",
       "--header": "ignore",
       "--binarygrouping": "none",
@@ -68,12 +68,11 @@
       "--exponentcase": "lowercase",
       "--operatorfunc": "spaced",
       "--elseposition": "same-line",
-      "--empty": "void",
+      "--voidtype": "void",
       "--ranges": "spaced",
       "--hexliteralcase": "uppercase",
       "--linebreaks": "lf",
       "--hexgrouping": "none",
-      "--comments": "indent",
       "--ifdef": "indent",
       "--stripunusedargs": "closure-only"
   }
