@@ -139,7 +139,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="600" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-ZO-8hI">
+                                    <textField horizontalHuggingPriority="1" verticalHuggingPriority="750" preferredMaxLayoutWidth="600" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-ZO-8hI">
                                         <rect key="frame" x="-2" y="301" width="569" height="160"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="YWM-yf-APr">
                                             <font key="font" metaFont="system"/>
@@ -168,7 +168,7 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="600" translatesAutoresizingMaskIntoConstraints="NO" id="lTp-Ld-4tY">
+                                    <textField horizontalHuggingPriority="1" verticalHuggingPriority="750" preferredMaxLayoutWidth="600" translatesAutoresizingMaskIntoConstraints="NO" id="lTp-Ld-4tY">
                                         <rect key="frame" x="-2" y="187" width="569" height="32"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="XCFormat uses SwiftFormat to format your Swift code, and Uncrustify to format your code in other languages." id="czg-Bm-neE">
                                             <font key="font" metaFont="system"/>
@@ -320,10 +320,6 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                                         </constraints>
                                     </customView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="lTp-Ld-4tY" secondAttribute="trailing" id="hXk-Ja-Czl"/>
-                                    <constraint firstAttribute="trailing" secondItem="a1g-ZO-8hI" secondAttribute="trailing" id="vBZ-De-xyI"/>
-                                </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
