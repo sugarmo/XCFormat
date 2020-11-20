@@ -125,11 +125,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="XCFormat" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" blendingMode="behindWindow" material="windowBackground" state="followsWindowActiveState" id="34Q-ma-IMb">
-                        <rect key="frame" x="0.0" y="0.0" width="645" height="817"/>
+                        <rect key="frame" x="0.0" y="0.0" width="645" height="634"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDc-FG-ZXb" userLabel="Root Stack View">
-                                <rect key="frame" x="40" y="223" width="565" height="502"/>
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDc-FG-ZXb" userLabel="Root Stack View">
+                                <rect key="frame" x="40" y="40" width="565" height="502"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B41-OJ-ARb">
                                         <rect key="frame" x="-2" y="481" width="53" height="21"/>
@@ -359,7 +359,7 @@ Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="1078"/>
+            <point key="canvasLocation" x="48.5" y="976"/>
         </scene>
     </scenes>
 </document>
