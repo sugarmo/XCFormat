@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		B02E501B2112DC86004F0EA5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E4FF62112B063004F0EA5 /* Constants.swift */; };
 		B02E501D2112DCBF004F0EA5 /* FormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E501C2112DCBF004F0EA5 /* FormatterExtension.swift */; };
 		B02E501F2112DCD3004F0EA5 /* FormatterCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */; };
-		B0395D0921141A8800427DBB /* swiftformat.json in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0721141A8800427DBB /* swiftformat.json */; };
 		B0565F8F22D84E3400391279 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F8E22D84E3400391279 /* AppGroup.swift */; };
 		B0565F9022D84E9B00391279 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F8E22D84E3400391279 /* AppGroup.swift */; };
 		B0565F9222D84F4F00391279 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F9122D84F4F00391279 /* Executable.swift */; };
@@ -23,7 +22,6 @@
 		B0565F9822D8527500391279 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F9722D8527500391279 /* Error.swift */; };
 		B0565F9922D852F500391279 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0565F9722D8527500391279 /* Error.swift */; };
 		B0565F9B22D858DC00391279 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B0287399209FF27C0093FE26 /* uncrustify.cfg */; };
-		B0565F9D22D858DE00391279 /* swiftformat.json in Resources */ = {isa = PBXBuildFile; fileRef = B0395D0721141A8800427DBB /* swiftformat.json */; };
 		B061F45022E1D1BF00D53444 /* SwiftFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F44F22E1D1BF00D53444 /* SwiftFormat.swift */; };
 		B061F45122E1D1BF00D53444 /* SwiftFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F44F22E1D1BF00D53444 /* SwiftFormat.swift */; };
 		B061F45322E1D1DA00D53444 /* Uncrustify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B061F45222E1D1DA00D53444 /* Uncrustify.swift */; };
@@ -34,6 +32,10 @@
 		B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AE1DAF64F700CF98C4 /* Main.storyboard */; };
 		B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */; };
 		B0A293CB1DAF650C00CF98C4 /* SourceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B0A293BB1DAF650C00CF98C4 /* SourceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B0AABFF72567B3020023FE00 /* swiftformat.yaml in Resources */ = {isa = PBXBuildFile; fileRef = B0AABFF42567B1810023FE00 /* swiftformat.yaml */; };
+		B0AABFF92567B3020023FE00 /* swiftformat.yaml in Resources */ = {isa = PBXBuildFile; fileRef = B0AABFF42567B1810023FE00 /* swiftformat.yaml */; };
+		B0AFE3A42567707500AC4921 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B0AFE3A32567707500AC4921 /* Yams */; };
+		B0AFE3A7256770A200AC4921 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B0AFE3A6256770A200AC4921 /* Yams */; };
 		B0B6CC6C22720DBD00BD940C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC6B22720DBD00BD940C /* Util.swift */; };
 		B0FD8AD024C2A6420063C930 /* uncrustify in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA0FF24C2190E00FABA63 /* uncrustify */; };
 		B0FD8AD124C2A6470063C930 /* swiftformat in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA04B24C218FF00FABA63 /* swiftformat */; };
@@ -93,7 +95,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 68689559908940F783182F85;
+			remoteGlobalIDString = 842F083792ED4958B30E0DD2;
 			remoteInfo = uncrustify;
 		};
 		B04CA10724C21A7B00FABA63 /* PBXContainerItemProxy */ = {
@@ -158,7 +160,6 @@
 		B02E50182112DA7A004F0EA5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B02E501C2112DCBF004F0EA5 /* FormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterExtension.swift; sourceTree = "<group>"; };
 		B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterCommand.swift; sourceTree = "<group>"; };
-		B0395D0721141A8800427DBB /* swiftformat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swiftformat.json; sourceTree = "<group>"; };
 		B0395D0B21141AD900427DBB /* Binary.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Binary.entitlements; sourceTree = "<group>"; };
 		B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftFormat.xcodeproj; path = Externals/SwiftFormat/SwiftFormat.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uncrustify.xcodeproj; path = Externals/uncrustify/build/uncrustify.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -177,6 +178,7 @@
 		B0A293C11DAF650C00CF98C4 /* SourceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SourceExtension.entitlements; sourceTree = "<group>"; };
 		B0A293C81DAF650C00CF98C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A293DB1DAF8CA800CF98C4 /* XCFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XCFormat.entitlements; sourceTree = "<group>"; };
+		B0AABFF42567B1810023FE00 /* swiftformat.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftformat.yaml; sourceTree = "<group>"; };
 		B0B6CC6B22720DBD00BD940C /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0AFE3A42567707500AC4921 /* Yams in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */,
+				B0AFE3A7256770A200AC4921 /* Yams in Frameworks */,
 				B07A5EC02563C3CE005FD116 /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,8 +207,8 @@
 		B0287396209FF25F0093FE26 /* uncrustify */ = {
 			isa = PBXGroup;
 			children = (
-				B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */,
 				B0287399209FF27C0093FE26 /* uncrustify.cfg */,
+				B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */,
 			);
 			path = uncrustify;
 			sourceTree = "<group>";
@@ -212,8 +216,8 @@
 		B0395D0621141A8800427DBB /* SwiftFormat */ = {
 			isa = PBXGroup;
 			children = (
+				B0AABFF42567B1810023FE00 /* swiftformat.yaml */,
 				B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */,
-				B0395D0721141A8800427DBB /* swiftformat.json */,
 			);
 			path = SwiftFormat;
 			sourceTree = "<group>";
@@ -345,6 +349,9 @@
 				B0A293CA1DAF650C00CF98C4 /* PBXTargetDependency */,
 			);
 			name = XCFormat;
+			packageProductDependencies = (
+				B0AFE3A32567707500AC4921 /* Yams */,
+			);
 			productName = XCFormat;
 			productReference = B0A293A01DAF64F700CF98C4 /* XCFormat.app */;
 			productType = "com.apple.product-type.application";
@@ -367,6 +374,9 @@
 				B04CA10624C21A7500FABA63 /* PBXTargetDependency */,
 			);
 			name = SourceExtension;
+			packageProductDependencies = (
+				B0AFE3A6256770A200AC4921 /* Yams */,
+			);
 			productName = SourceExtension;
 			productReference = B0A293BB1DAF650C00CF98C4 /* SourceExtension.appex */;
 			productType = "com.apple.product-type.xcode-extension";
@@ -418,6 +428,9 @@
 				Base,
 			);
 			mainGroup = B0A293971DAF64F700CF98C4;
+			packageReferences = (
+				B0AFE3A22567707500AC4921 /* XCRemoteSwiftPackageReference "Yams" */,
+			);
 			productRefGroup = B0A293A11DAF64F700CF98C4 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -498,7 +511,7 @@
 				B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */,
 				B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */,
 				B0565F9B22D858DC00391279 /* uncrustify.cfg in Resources */,
-				B0565F9D22D858DE00391279 /* swiftformat.json in Resources */,
+				B0AABFF72567B3020023FE00 /* swiftformat.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */,
-				B0395D0921141A8800427DBB /* swiftformat.json in Resources */,
+				B0AABFF92567B3020023FE00 /* swiftformat.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,6 +841,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B0AFE3A22567707500AC4921 /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B0AFE3A32567707500AC4921 /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0AFE3A22567707500AC4921 /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
+		};
+		B0AFE3A6256770A200AC4921 /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0AFE3A22567707500AC4921 /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0A293981DAF64F700CF98C4 /* Project object */;
 }

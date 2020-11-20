@@ -1,0 +1,73 @@
+rules:
+- spaceInsideGenerics
+- spaceInsideParens
+- redundantReturn
+- redundantSelf
+- redundantNilInit
+- duplicateImports
+- linebreakAtEndOfFile
+- void
+- trailingSpace
+- indent
+- redundantParens
+- spaceInsideBraces
+- spaceAroundParens
+- semicolons
+- hoistPatternLet
+- blankLinesAroundMark
+- sortedImports
+- wrapArguments
+- unusedArguments
+- braces
+- redundantBackticks
+- redundantPattern
+- consecutiveBlankLines
+- blankLinesAtEndOfScope
+- redundantInit
+- redundantVoidReturnType
+- spaceInsideComments
+- elseOnSameLine
+- todos
+- blankLinesBetweenScopes
+- redundantLet
+- redundantGet
+- specifiers
+- spaceInsideBrackets
+- blankLinesAtStartOfScope
+- spaceAroundGenerics
+- redundantRawValues
+- spaceAroundBrackets
+- fileHeader
+- spaceAroundBraces
+- numberFormatting
+- strongOutlets
+- linebreaks
+- spaceAroundOperators
+- trailingCommas
+- consecutiveSpaces
+- spaceAroundComments
+options:
+  elseposition: same-line
+  semicolons: inline
+  linebreaks: lf
+  hexgrouping: none
+  binarygrouping: none
+  wraparguments: disabled
+  octalgrouping: none
+  wrapcollections: disabled
+  hexliteralcase: uppercase
+  stripunusedargs: closure-only
+  ranges: spaced
+  patternlet: hoist
+  allman: false
+  ifdef: indent
+  self: remove
+  voidtype: void
+  exponentcase: lowercase
+  indent: 4
+  header: ignore
+  indentcase: false
+  trimwhitespace: always
+  operatorfunc: spaced
+  commas: always
+  decimalgrouping: none

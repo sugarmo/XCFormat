@@ -138,7 +138,7 @@ class FormatterCommand: NSObject, XCSourceEditorCommand {
         let uti = invocation.buffer.contentUTI
         let isFragmented = invocation.commandIdentifier.hasSuffix(FormatAction.formatSelctedLines.rawValue)
         let pathExtension = execType.makePathExtension(uti: uti) ?? makePathExtension(uti: uti)
-        let sourceFileName = "sourcecode".bridged().appendingPathExtension(pathExtension)!
+        let sourceFileName = "sourcecode".bridged.appendingPathExtension(pathExtension)!
         let sourceFileURL = temporaryFolderURL!.appendingPathComponent(sourceFileName, isDirectory: false)
 
         var selectedLineRange = NSMakeRange(NSNotFound, 0)

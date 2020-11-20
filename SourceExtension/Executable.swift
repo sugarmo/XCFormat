@@ -37,7 +37,7 @@ extension Executable {
             return nil
         }
 
-        let path = appGroupPath.bridged().appendingPathComponent("Configs")
+        let path = appGroupPath.bridged.appendingPathComponent("Configs")
 
         if createIfAbsent, !FileManager.default.fileExists(atPath: path) {
             do {
@@ -55,7 +55,7 @@ extension Executable {
     }
 
     static func userConfigPath(createDirectoryIfAbsent: Bool = false) -> String? {
-        userConfigsDirectory(createIfAbsent: createDirectoryIfAbsent)?.bridged().appendingPathComponent(configName)
+        userConfigsDirectory(createIfAbsent: createDirectoryIfAbsent)?.bridged.appendingPathComponent(configName)
     }
 
     static func docPath() -> String? {
@@ -63,7 +63,11 @@ extension Executable {
     }
 
     static func resetConfigToDefault() {
-        if let source = defaultConfigPath(), let destination = userConfigPath(createDirectoryIfAbsent: true) {
+        guard let source = defaultConfigPath() else {
+            return
+        }
+
+        if let destination = userConfigPath(createDirectoryIfAbsent: true) {
             try? FileManager.default.removeItem(atPath: destination)
             try? FileManager.default.copyItem(atPath: source, toPath: destination)
         }
@@ -90,7 +94,7 @@ extension Executable {
     }
 
     static func removeUserDoc() {
-        if let userDocPath = userConfigsDirectory()?.bridged().appendingPathComponent(docName) {
+        if let userDocPath = userConfigsDirectory()?.bridged.appendingPathComponent(docName) {
             try? FileManager.default.removeItem(atPath: userDocPath)
         }
     }

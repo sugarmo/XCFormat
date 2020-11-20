@@ -9,8 +9,16 @@
 import Cocoa
 
 extension String {
-    func bridged() -> NSString {
+    var bridged: NSString {
         return self as NSString
+    }
+
+    var fileExisting: String? {
+        if FileManager.default.fileExists(atPath: self) {
+            return self
+        } else {
+            return nil
+        }
     }
 }
 
