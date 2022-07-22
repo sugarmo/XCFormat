@@ -95,7 +95,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 842F083792ED4958B30E0DD2;
+			remoteGlobalIDString = D9441249A1784613BE627E4A;
 			remoteInfo = uncrustify;
 		};
 		B04CA10724C21A7B00FABA63 /* PBXContainerItemProxy */ = {
@@ -370,8 +370,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				B04CA10824C21A7B00FABA63 /* PBXTargetDependency */,
 				B04CA10624C21A7500FABA63 /* PBXTargetDependency */,
+				B04CA10824C21A7B00FABA63 /* PBXTargetDependency */,
 			);
 			name = SourceExtension;
 			packageProductDependencies = (
