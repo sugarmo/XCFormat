@@ -778,6 +778,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SourceExtension/SourceExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J2XWB65W94;
 				INFOPLIST_FILE = SourceExtension/Info.plist;
@@ -796,6 +797,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SourceExtension/SourceExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J2XWB65W94;
 				INFOPLIST_FILE = SourceExtension/Info.plist;

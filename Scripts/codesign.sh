@@ -2,4 +2,4 @@
 
 # code sign for app store
 
-codesign --force --sign 444C6C6C91A8968EA2A83BC7AAA507B86F4C1F1A --entitlements ../SourceExtension/Binary.entitlements $1
+codesign --force --sign 6BBBF54EBDD6BE0CF88F0BBB54C82A727CAE2441 --entitlements ../SourceExtension/Binary.entitlements $1
