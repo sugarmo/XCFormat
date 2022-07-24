@@ -9,7 +9,7 @@ typedef NS_OPTIONS(NSUInteger, YJFileLoggerOptions) {
 };
 
 typedef NS_ENUM(NSInteger, DisplayMode) {
-    // DisplayMode256Colors NS_SWIFT_NAME(with256Colors),
+    DisplayMode256Colors NS_SWIFT_NAME(with256Colors),
     DisplayModeThousandsOfColors,
     DisplayModeMillionsOfColors,
 };
@@ -160,6 +160,49 @@ NS_SWIFT_NAME(Sandwich.Preferences)
     _usedPageCount -= MIN(range.length, _usedPageCount);
 }
 
+- (OSType)cvPixelBufferFormat {
+    if (self.bitsPerComponent == 8 && self.bitsPerPixel == 32) {
+        switch (self.bitmapInfo) {
+            case YJBitmapInfoARGB:
+                return kCVPixelFormatType_32ARGB;
+            case YJBitmapInfoBGRA:
+                return kCVPixelFormatType_32BGRA;
+            default:
+                break;
+        }
+    }
+    return 0;
+}
+
+- (OSType)cvPixelBufferFormat {
+    if (self.bitsPerComponent == 8 && self.bitsPerPixel == 32) {
+        switch (self.bitmapInfo) {
+            case YJBitmapInfoARGB:
+                return kCVPixelFormatType_32ARGB;
+                
+            #ifdef APP_EXTENSION
+            case YJBitmapInfoBGRA:
+              kCVPixelFormatType_32BGRA;
+            #else
+            case YJBitmapInfoBGRA:
+                return kCVPixelFormatType_32BGRA;
+            #endif
+
+            default:
+                break;
+        }
+    }
+    return 0;
+}
+
++ (instancetype)predefined {
+#ifdef APP_EXTENSION
+    return [self mmap];
+#else
+    return [self valloc];
+#endif
+}
+
 @end
 
 @interface NSData (YJExifAdditions)
@@ -167,3 +210,4 @@ NS_SWIFT_NAME(Sandwich.Preferences)
 @property (nonatomic, readonly) YJExif *yj_exif NS_SWIFT_NAME(exif);
 
 @end
+
