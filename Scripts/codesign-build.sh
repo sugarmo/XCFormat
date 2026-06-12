@@ -1,5 +1,18 @@
 #!/bin/bash
 
-# code sign for app store
-codesign --force --sign "6BBBF54EBDD6BE0CF88F0BBB54C82A727CAE2441" --entitlements "${SRCROOT}/SourceExtension/Binary.entitlements" "${TARGET_BUILD_DIR}/$1"
-echo "Signing $1"
+set -euo pipefail
+
+if [[ $# -ne 1 ]]; then
+    echo "usage: codesign-build.sh <binary-name>" >&2
+    exit 64
+fi
+
+resources_folder="${UNLOCALIZED_RESOURCES_FOLDER_PATH:-}"
+if [[ -z "${resources_folder}" ]]; then
+    resources_folder="${CONTENTS_FOLDER_PATH:?}/Resources"
+fi
+
+binary_path="${TARGET_BUILD_DIR}/${resources_folder}/$1"
+export CODESIGN_ENTITLEMENTS="${SRCROOT}/SourceExtension/Binary.entitlements"
+
+"${SRCROOT}/Scripts/codesign.sh" "${binary_path}"

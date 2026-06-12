@@ -37,74 +37,9 @@
 		B0AFE3A42567707500AC4921 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B0AFE3A32567707500AC4921 /* Yams */; };
 		B0AFE3A7256770A200AC4921 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B0AFE3A6256770A200AC4921 /* Yams */; };
 		B0B6CC6C22720DBD00BD940C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC6B22720DBD00BD940C /* Util.swift */; };
-		B0FD8AD024C2A6420063C930 /* uncrustify in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA0FF24C2190E00FABA63 /* uncrustify */; };
-		B0FD8AD124C2A6470063C930 /* swiftformat in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA04B24C218FF00FABA63 /* swiftformat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B04CA04424C218FF00FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 01A0EAA41D5DB4CF00A0A8E3;
-			remoteInfo = SwiftFormat;
-		};
-		B04CA04624C218FF00FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 01A0EAAE1D5DB4D000A0A8E3;
-			remoteInfo = SwiftFormatTests;
-		};
-		B04CA04824C218FF00FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 015AF2C51DC6A538008F0A8C;
-			remoteInfo = SwiftFormatPerfTests;
-		};
-		B04CA04A24C218FF00FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 01A0EACA1D5DB5F500A0A8E3;
-			remoteInfo = CommandLineTool;
-		};
-		B04CA04C24C218FF00FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 90C4B6CA1DA4B04A009EB000;
-			remoteInfo = "SwiftFormat for Xcode";
-		};
-		B04CA04E24C218FF00FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 90C4B6DD1DA4B059009EB000;
-			remoteInfo = "Editor Extension";
-		};
-		B04CA0FE24C2190E00FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C6B323086BD345F297590A70;
-			remoteInfo = uncrustify;
-		};
-		B04CA10524C21A7500FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D9441249A1784613BE627E4A;
-			remoteInfo = uncrustify;
-		};
-		B04CA10724C21A7B00FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 01A0EAC91D5DB5F500A0A8E3;
-			remoteInfo = CommandLineTool;
-		};
 		B0A293C91DAF650C00CF98C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0A293981DAF64F700CF98C4 /* Project object */;
@@ -137,18 +72,6 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0FD8ACF24C2A6390063C930 /* Copy CLI */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				B0FD8AD124C2A6470063C930 /* swiftformat in Copy CLI */,
-				B0FD8AD024C2A6420063C930 /* uncrustify in Copy CLI */,
-			);
-			name = "Copy CLI";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -161,8 +84,6 @@
 		B02E501C2112DCBF004F0EA5 /* FormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterExtension.swift; sourceTree = "<group>"; };
 		B02E501E2112DCD3004F0EA5 /* FormatterCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterCommand.swift; sourceTree = "<group>"; };
 		B0395D0B21141AD900427DBB /* Binary.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Binary.entitlements; sourceTree = "<group>"; };
-		B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftFormat.xcodeproj; path = Externals/SwiftFormat/SwiftFormat.xcodeproj; sourceTree = SOURCE_ROOT; };
-		B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uncrustify.xcodeproj; path = Externals/uncrustify/build/uncrustify.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B0565F8E22D84E3400391279 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		B0565F9122D84F4F00391279 /* Executable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
 		B0565F9722D8527500391279 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -208,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				B0287399209FF27C0093FE26 /* uncrustify.cfg */,
-				B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */,
 			);
 			path = uncrustify;
 			sourceTree = "<group>";
@@ -217,30 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				B0AABFF42567B1810023FE00 /* swiftformat.yaml */,
-				B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */,
 			);
 			path = SwiftFormat;
-			sourceTree = "<group>";
-		};
-		B04CA03C24C218FF00FABA63 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B04CA04524C218FF00FABA63 /* SwiftFormat.framework */,
-				B04CA04724C218FF00FABA63 /* SwiftFormatTests.xctest */,
-				B04CA04924C218FF00FABA63 /* SwiftFormatPerfTests.xctest */,
-				B04CA04B24C218FF00FABA63 /* swiftformat */,
-				B04CA04D24C218FF00FABA63 /* SwiftFormat for Xcode.app */,
-				B04CA04F24C218FF00FABA63 /* SwiftFormat.appex */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B04CA05124C2190E00FABA63 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B04CA0FF24C2190E00FABA63 /* uncrustify */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B07E41271DB08882008104EA /* Utilities */ = {
@@ -363,15 +261,13 @@
 				B0A293B71DAF650C00CF98C4 /* Sources */,
 				B0A293B91DAF650C00CF98C4 /* Resources */,
 				B0A293B81DAF650C00CF98C4 /* Frameworks */,
-				B0FD8AD224C2C0C30063C930 /* Code Sign CLI */,
 				B0FD8ACF24C2A6390063C930 /* Copy CLI */,
+				B0FD8AD224C2C0C30063C930 /* Code Sign CLI */,
 				B07A5EC22563C3CE005FD116 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B04CA10624C21A7500FABA63 /* PBXTargetDependency */,
-				B04CA10824C21A7B00FABA63 /* PBXTargetDependency */,
 			);
 			name = SourceExtension;
 			packageProductDependencies = (
@@ -434,14 +330,6 @@
 			productRefGroup = B0A293A11DAF64F700CF98C4 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = B04CA03C24C218FF00FABA63 /* Products */;
-					ProjectRef = B04CA03B24C218FF00FABA63 /* SwiftFormat.xcodeproj */;
-				},
-				{
-					ProductGroup = B04CA05124C2190E00FABA63 /* Products */;
-					ProjectRef = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -450,58 +338,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B04CA04524C218FF00FABA63 /* SwiftFormat.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftFormat.framework;
-			remoteRef = B04CA04424C218FF00FABA63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B04CA04724C218FF00FABA63 /* SwiftFormatTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftFormatTests.xctest;
-			remoteRef = B04CA04624C218FF00FABA63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B04CA04924C218FF00FABA63 /* SwiftFormatPerfTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftFormatPerfTests.xctest;
-			remoteRef = B04CA04824C218FF00FABA63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B04CA04B24C218FF00FABA63 /* swiftformat */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = swiftformat;
-			remoteRef = B04CA04A24C218FF00FABA63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B04CA04D24C218FF00FABA63 /* SwiftFormat for Xcode.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "SwiftFormat for Xcode.app";
-			remoteRef = B04CA04C24C218FF00FABA63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B04CA04F24C218FF00FABA63 /* SwiftFormat.appex */ = {
-			isa = PBXReferenceProxy;
-			fileType = "wrapper.app-extension";
-			path = SwiftFormat.appex;
-			remoteRef = B04CA04E24C218FF00FABA63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B04CA0FF24C2190E00FABA63 /* uncrustify */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = uncrustify;
-			remoteRef = B04CA0FE24C2190E00FABA63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B0A2939E1DAF64F700CF98C4 /* Resources */ = {
@@ -527,8 +363,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B0FD8ACF24C2A6390063C930 /* Copy CLI */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy CLI";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Scripts/build-cli.sh\"\n";
+		};
 		B0FD8AD224C2C0C30063C930 /* Code Sign CLI */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -583,16 +439,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B04CA10624C21A7500FABA63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = uncrustify;
-			targetProxy = B04CA10524C21A7500FABA63 /* PBXContainerItemProxy */;
-		};
-		B04CA10824C21A7B00FABA63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CommandLineTool;
-			targetProxy = B04CA10724C21A7B00FABA63 /* PBXContainerItemProxy */;
-		};
 		B0A293CA1DAF650C00CF98C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B0A293BA1DAF650C00CF98C4 /* SourceExtension */;
