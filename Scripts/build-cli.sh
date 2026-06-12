@@ -51,6 +51,37 @@ fi
 
 deployment_target="${MACOSX_DEPLOYMENT_TARGET:-10.15}"
 
+resolve_cmake() {
+    if [[ -n "${CMAKE:-}" ]]; then
+        if [[ -x "${CMAKE}" ]]; then
+            echo "${CMAKE}"
+            return 0
+        fi
+
+        echo "error: CMAKE is set but is not executable: ${CMAKE}" >&2
+        exit 69
+    fi
+
+    if command -v cmake >/dev/null 2>&1; then
+        command -v cmake
+        return 0
+    fi
+
+    # Xcode launched from Finder does not inherit shell startup PATH, so look
+    # in the common package-manager locations without changing the whole build.
+    local candidate
+    for candidate in /opt/homebrew/bin/cmake /usr/local/bin/cmake /opt/local/bin/cmake; do
+        if [[ -x "${candidate}" ]]; then
+            echo "${candidate}"
+            return 0
+        fi
+    done
+
+    echo "error: cmake not found. Install CMake, or set CMAKE to the cmake executable path." >&2
+    echo "Current PATH: ${PATH:-}" >&2
+    exit 69
+}
+
 copy_executable() {
     local source_path="$1"
     local destination_path="$2"
@@ -121,7 +152,9 @@ build_uncrustify() {
     local source_path="${SRCROOT}/Externals/uncrustify"
     local build_path="${TARGET_TEMP_DIR}/uncrustify.build"
     local output_path="${resources_path}/uncrustify"
+    local cmake_tool
     local cmake_archs
+    cmake_tool="$(resolve_cmake)"
     cmake_archs="$(IFS=';'; echo "${build_archs[*]}")"
 
     local cmake_args=(
@@ -135,8 +168,8 @@ build_uncrustify() {
         cmake_args+=("-DCMAKE_OSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET}")
     fi
 
-    cmake "${cmake_args[@]}"
-    cmake --build "${build_path}" --config "${cmake_configuration}" --target uncrustify
+    "${cmake_tool}" "${cmake_args[@]}"
+    "${cmake_tool}" --build "${build_path}" --config "${cmake_configuration}" --target uncrustify
 
     local binary_path
     binary_path="$(find_uncrustify_binary "${build_path}")"
@@ -145,3 +178,7 @@ build_uncrustify() {
 
 build_swiftformat
 build_uncrustify
+
+export CODESIGN_ENTITLEMENTS="${SRCROOT}/SourceExtension/Binary.entitlements"
+"${SRCROOT}/Scripts/codesign.sh" "${resources_path}/swiftformat"
+"${SRCROOT}/Scripts/codesign.sh" "${resources_path}/uncrustify"
