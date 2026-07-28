@@ -51,6 +51,14 @@ fi
 
 deployment_target="${MACOSX_DEPLOYMENT_TARGET:-10.15}"
 
+# Archive intermediates include the full DerivedData hierarchy. CMake embeds
+# absolute generated-source paths in target names, so use a short, stable
+# auxiliary root to stay below the filesystem component-length limit.
+build_scope="${SRCROOT}|${CONFIGURATION:-Debug}|${build_archs[*]}|${deployment_target}"
+build_scope_hash="$(printf '%s' "${build_scope}" | /usr/bin/shasum -a 256 | /usr/bin/awk '{ print substr($1, 1, 16) }')"
+auxiliary_build_root="/tmp/XCFormat-$(id -u)-${build_scope_hash}"
+mkdir -p "${auxiliary_build_root}"
+
 resolve_cmake() {
     if [[ -n "${CMAKE:-}" ]]; then
         if [[ -x "${CMAKE}" ]]; then
@@ -101,7 +109,7 @@ build_swiftformat() {
     local built_binaries=()
 
     for arch in "${build_archs[@]}"; do
-        local scratch_path="${TARGET_TEMP_DIR}/SwiftFormat-${arch}.build"
+        local scratch_path="${auxiliary_build_root}/SwiftFormat-${arch}.build"
         local triple="${arch}-apple-macosx${deployment_target}"
         local swift_build_args=(
             build
@@ -150,7 +158,7 @@ find_uncrustify_binary() {
 
 build_uncrustify() {
     local source_path="${SRCROOT}/Externals/uncrustify"
-    local build_path="${TARGET_TEMP_DIR}/uncrustify.build"
+    local build_path="${auxiliary_build_root}/uncrustify.build"
     local output_path="${resources_path}/uncrustify"
     local cmake_tool
     local cmake_archs
