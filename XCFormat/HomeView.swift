@@ -48,20 +48,125 @@ struct HomeView: View {
 private struct XCFormatTab: View {
     var body: some View {
         Form {
-            Section {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Xcode Source Editor Extension")
-                        .font(.headline)
+            Section("Get Started") {
+                VStack(spacing: 0) {
+                    SetupStep(
+                        number: 1,
+                        title: "Enable the extension",
+                        detail: "Open General → Login Items & Extensions. Under Extensions, click the info button next to Xcode Source Editor, turn on XCFormat, then click Done.",
+                        actionTitle: "Open System Settings",
+                        action: openExtensionSettings
+                    )
 
-                    Text("Enable it in System Settings > Extensions > Xcode Source Editor. After that, use Editor > XCFormat in Xcode to format the current file or selected text.")
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.leading)
-                        .fixedSize(horizontal: false, vertical: true)
+                    Divider()
+                        .padding(.leading, 38)
+
+                    SetupStep(
+                        number: 2,
+                        title: "Relaunch Xcode",
+                        detail: "Quit Xcode if it is open, then open it again so it can load the extension."
+                    )
+
+                    Divider()
+                        .padding(.leading, 38)
+
+                    SetupStep(
+                        number: 3,
+                        title: "Format your code",
+                        detail: "Open a source file, then choose a command from the Editor menu.",
+                        commands: [
+                            "Format Active File",
+                            "Format Selected Lines",
+                        ]
+                    )
                 }
             }
         }
         .formStyle(.grouped)
-        .scrollDisabled(true)
+    }
+
+    private func openExtensionSettings() {
+        guard let url = URL(string: "x-apple.systempreferences:com.apple.LoginItems-Settings.extension") else {
+            return
+        }
+
+        NSWorkspace.shared.open(url)
+    }
+}
+
+private struct SetupStep: View {
+    let number: Int
+    let title: String
+    let detail: String
+    var actionTitle: String? = nil
+    var action: (() -> Void)? = nil
+    var commands: [String] = []
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            Text(number.formatted())
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.white)
+                .frame(width: 24, height: 24)
+                .background(.tint, in: Circle())
+                .accessibilityHidden(true)
+
+            VStack(alignment: .leading, spacing: 6) {
+                Text(title)
+                    .font(.headline)
+
+                Text(detail)
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                if let actionTitle, let action {
+                    HStack {
+                        Button(action: action) {
+                            Label(actionTitle, systemImage: "gearshape")
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .controlSize(.small)
+
+                        Spacer()
+                    }
+                    .padding(.top, 2)
+                }
+
+                if !commands.isEmpty {
+                    VStack(alignment: .leading, spacing: 5) {
+                        ForEach(commands, id: \.self) { command in
+                            MenuPath(command: command)
+                        }
+                    }
+                    .padding(.top, 2)
+                }
+            }
+        }
+        .padding(.vertical, 7)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+private struct MenuPath: View {
+    let command: String
+
+    var body: some View {
+        HStack(spacing: 5) {
+            Text("Editor")
+            Image(systemName: "chevron.right")
+            Text("XCFormat")
+            Image(systemName: "chevron.right")
+            Text(command)
+                .foregroundStyle(.primary)
+        }
+        .font(.caption)
+        .foregroundStyle(.secondary)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 5)
+        .background(.quaternary, in: RoundedRectangle(cornerRadius: 6))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Editor, XCFormat, \(command)")
     }
 }
 
@@ -112,7 +217,7 @@ private struct EngineTab: View {
                 LabeledContent("Config") {
                     HStack(spacing: 8) {
                         Button("Show in Finder", action: showConfigInFinder)
-                    Button("Reset to Default", action: executable.resetConfigToDefault)
+                        Button("Reset to Default", action: executable.resetConfigToDefault)
                     }
                 }
             }
