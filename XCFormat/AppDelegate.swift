@@ -8,8 +8,7 @@
 
 import Cocoa
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         SwiftFormat.appDidLaunch()
         Uncrustify.appDidLaunch()
