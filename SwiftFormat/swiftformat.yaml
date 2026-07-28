@@ -1,73 +1,241 @@
+# SwiftFormat 0.61.1
+# Source: Externals/SwiftFormat @ a5fa7a6a57abeb834df1b3fa43ea9133137d5ade
 rules:
-- blankLinesAroundMark
-- blankLinesAtEndOfScope
-- blankLinesAtStartOfScope
-- blankLinesBetweenScopes
-- braces
-- consecutiveBlankLines
-- consecutiveSpaces
-- duplicateImports
-- elseOnSameLine
-- fileHeader
-- hoistPatternLet
-- indent
-- linebreakAtEndOfFile
-- linebreaks
-- numberFormatting
-- redundantBackticks
-- redundantGet
-- redundantInit
-- redundantLet
-- redundantNilInit
-- redundantParens
-- redundantPattern
-- redundantRawValues
-- redundantReturn
-- redundantSelf
-- redundantVoidReturnType
-- semicolons
-- sortedImports
-- spaceAroundBraces
-- spaceAroundBrackets
-- spaceAroundComments
-- spaceAroundGenerics
-- spaceAroundOperators
-- spaceAroundParens
-- spaceInsideBraces
-- spaceInsideBrackets
-- spaceInsideComments
-- spaceInsideGenerics
-- spaceInsideParens
-- specifiers
-- strongOutlets
-- todos
-- trailingCommas
-- trailingSpace
-- unusedArguments
-- void
-- wrapArguments
+  - andOperator
+  - anyObjectProtocol
+  - applicationMain
+  - assertionFailures
+  - blankLineAfterImports
+  - blankLinesAroundMark
+  - blankLinesAtEndOfScope
+  - blankLinesAtStartOfScope
+  - blankLinesBetweenChainedFunctions
+  - blankLinesBetweenImports
+  - blankLinesBetweenScopes
+  - braces
+  - conditionalAssignment
+  - consecutiveBlankLines
+  - consecutiveSpaces
+  - consistentSwitchCaseSpacing
+  - docComments
+  - docCommentsBeforeModifiers
+  - duplicateImports
+  - elseOnSameLine
+  - emptyBraces
+  - emptyExtensions
+  - enumNamespaces
+  - environmentEntry
+  - extensionAccessControl
+  - fileHeader
+  - fileMacro
+  - genericExtensions
+  - headerFileName
+  - hoistAwait
+  - hoistPatternLet
+  - hoistTry
+  - indent
+  - initCoderUnavailable
+  - leadingDelimiters
+  - linebreakAtEndOfFile
+  - linebreaks
+  - modifierOrder
+  - modifiersOnSameLine
+  - noForceTryInTests
+  - noForceUnwrapInTests
+  - numberFormatting
+  - opaqueGenericParameters
+  - preferCountWhere
+  - preferForLoop
+  - preferKeyPath
+  - redundantAsync
+  - redundantBackticks
+  - redundantBreak
+  - redundantClosure
+  - redundantEmptyView
+  - redundantEquatable
+  - redundantExtensionACL
+  - redundantFileprivate
+  - redundantGet
+  - redundantInit
+  - redundantInternal
+  - redundantLet
+  - redundantLetError
+  - redundantMemberwiseInit
+  - redundantNilInit
+  - redundantObjc
+  - redundantOptionalBinding
+  - redundantParens
+  - redundantPattern
+  - redundantPublic
+  - redundantRawValues
+  - redundantReturn
+  - redundantSelf
+  - redundantSendable
+  - redundantStaticSelf
+  - redundantSwiftTestingSuite
+  - redundantThrows
+  - redundantType
+  - redundantTypedThrows
+  - redundantVariable
+  - redundantViewBuilder
+  - redundantVoidReturnType
+  - semicolons
+  - simplifyGenericConstraints
+  - sortDeclarations
+  - sortImports
+  - sortTypealiases
+  - spaceAroundBraces
+  - spaceAroundBrackets
+  - spaceAroundComments
+  - spaceAroundGenerics
+  - spaceAroundOperators
+  - spaceAroundParens
+  - spaceInsideBraces
+  - spaceInsideBrackets
+  - spaceInsideComments
+  - spaceInsideGenerics
+  - spaceInsideParens
+  - strongOutlets
+  - strongifiedSelf
+  - swiftTestingTestCaseNames
+  - todos
+  - trailingClosures
+  - trailingCommas
+  - trailingSpace
+  - typeSugar
+  - unusedArguments
+  - void
+  - wrap
+  - wrapArguments
+  - wrapAttributes
+  - wrapFunctionBodies
+  - wrapLoopBodies
+  - wrapMultilineStatementBraces
+  - wrapPropertyBodies
+  - wrapSingleLineComments
+  - yodaConditions
 options:
-  allman: false
-  binarygrouping: none
-  commas: always
-  decimalgrouping: none
-  elseposition: same-line
-  exponentcase: lowercase
-  header: ignore
-  hexgrouping: none
-  hexliteralcase: uppercase
-  ifdef: indent
-  indent: 4
-  indentcase: false
-  linebreaks: lf
-  octalgrouping: none
-  operatorfunc: spaced
-  patternlet: hoist
-  ranges: spaced
-  self: remove
-  semicolons: inline
-  stripunusedargs: closure-only
-  trimwhitespace: always
-  voidtype: void
-  wraparguments: disabled
-  wrapcollections: disabled
+  acronyms: "ID,URL,UUID"
+  allman: "false"
+  allow-partial-wrapping: "true"
+  anonymous-for-each: "convert"
+  asset-literals: "visual-width"
+  async-capturing: ""
+  before-marks: ""
+  binary-grouping: "none"
+  blank-line-after-switch-case: "multiline-only"
+  call-site-paren: "default"
+  category-mark: "MARK: %c"
+  class-threshold: "0"
+  closing-paren: "balanced"
+  closure-void: "remove"
+  complex-attributes: "preserve"
+  computed-var-attributes: "preserve"
+  conditional-assignment: "after-property"
+  date-format: "system"
+  decimal-grouping: "none"
+  default-test-suite-attributes: ""
+  doc-comments: "before-declarations"
+  else-position: "same-line"
+  empty-braces: "no-space"
+  enum-namespaces: "always"
+  enum-threshold: "0"
+  equatable-macro: "none"
+  exponent-case: "lowercase"
+  exponent-grouping: "disabled"
+  extension-acl: "on-extension"
+  extension-mark: "MARK: - %t + %c"
+  extension-threshold: "0"
+  file-macro: "#file"
+  fraction-grouping: "disabled"
+  func-attributes: "preserve"
+  generic-types: ""
+  group-blank-lines: "true"
+  grouped-extension: "MARK: %c"
+  guard-else: "auto"
+  header: "ignore"
+  hex-grouping: "none"
+  hex-literal-case: "uppercase"
+  ifdef: "indent"
+  import-grouping: "alpha,access-control"
+  indent: "4"
+  indent-case: "false"
+  indent-strings: "false"
+  inferred-types: "always"
+  init-coder-nil: "false"
+  lifecycle: ""
+  line-after-marks: "true"
+  line-between-guards: "false"
+  linebreaks: "lf"
+  mark-categories: "true"
+  mark-class-threshold: "0"
+  mark-enum-threshold: "0"
+  mark-extension-threshold: "0"
+  mark-extensions: "always"
+  mark-struct-threshold: "0"
+  mark-types: "always"
+  max-width: "none"
+  modifier-order: ""
+  never-trailing: ""
+  nil-init: "remove"
+  no-space-operators: ""
+  no-wrap-operators: ""
+  non-complex-attributes: ""
+  octal-grouping: "none"
+  operator-func: "spaced"
+  organization-mode: "visibility"
+  organize-types: "actor,class,enum,struct"
+  pattern-let: "hoist"
+  prefer-synthesized-init-for-internal-structs: "never"
+  preserve-acronyms: ""
+  preserve-decls: ""
+  preserved-property-types: "Package"
+  property-types: "infer-locals-only"
+  ranges: "spaced"
+  redundant-async: "tests-only"
+  redundant-throws: "tests-only"
+  self: "remove"
+  self-required: ""
+  semicolons: "inline-only"
+  short-optionals: "preserve-struct-inits"
+  single-line-for-each: "ignore"
+  smart-tabs: "enabled"
+  some-any: "true"
+  sort-swiftui-properties: "none"
+  sorted-patterns: ""
+  stored-var-attributes: "preserve"
+  strip-unused-args: "closure-only"
+  struct-threshold: "0"
+  suite-name-format: "preserve"
+  tab-width: "unspecified"
+  test-case-access-control: "internal"
+  test-case-name-format: "raw-identifiers"
+  throw-capturing: ""
+  timezone: "system"
+  trailing-closures: ""
+  trailing-commas: "always"
+  trim-whitespace: "always"
+  type-attributes: "preserve"
+  type-blank-lines: "remove"
+  type-body-marks: "preserve"
+  type-delimiter: "space-after"
+  type-mark: "MARK: - %t"
+  type-marks: ""
+  type-order: ""
+  url-macro: "none"
+  visibility-marks: ""
+  visibility-order: ""
+  void-type: "Void"
+  wrap-arguments: "disabled"
+  wrap-collections: "disabled"
+  wrap-conditions: "preserve"
+  wrap-effects: "preserve"
+  wrap-enum-cases: "always"
+  wrap-parameters: "default"
+  wrap-return-type: "preserve"
+  wrap-string-interpolation: "default"
+  wrap-ternary: "default"
+  wrap-type-aliases: "preserve"
+  xcode-indentation: "disabled"
+  xctest-symbols: ""
+  yoda-swap: "always"
